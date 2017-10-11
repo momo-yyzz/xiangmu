@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			ul,
+			ol,
+			dl,
+			dd {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 12px;
+				font-family: "微软雅黑";
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+				display: block;
+				text-decoration: none;
+			}
+			
+			img {
+				border: 0;
+			}
+			
+			.box {
+				width: 840px;
+				height: 648px;
+				background: url(images2/bj.jpg) no-repeat;
+				padding: 152px 0px 0px 160px;
+			}
+			
+			.box1 {
+				width: 634px;
+				height: 459px;
+				background: #fff url(images2/01.jpg) no-repeat 618px 228px;
+				border-radius: 15px;
+				padding: 47px 0px 0px 45px;
+			}
+			
+			.box2 {
+				width: 560px;
+				height: 410px;
+				background: #000;
+				border: 1px solid #dcdcdc;
+				position: relative;
+			}
+			
+			#qh {
+				width: 259px;
+				height: 34px;
+				border: 1px solid #dcdcdc;
+				border-radius: 2px;
+				margin: 15px 0px 0px 195px;
+			}
+			
+			#qh a {
+				font: 14px/34px "微软雅黑";
+				color: #fff;
+				text-align: center;
+				float: left;
+			}
+			
+			#qh #qh1 {
+				width: 129px;
+			}
+			
+			#qh #qh2 {
+				width: 129px;
+			}
+			
+			.box2 #ppc {
+				font: 13px/23px "微软雅黑";
+				color: #8e8e8e;
+				margin: 8px 0px 0px 200px;
+			}
+			
+			.box2 #img {
+				width: 550px;
+				height: 310px;
+				margin: 13px 0px 0px 5px;
+			}
+			
+			.box2 #a1 {
+				width: 35px;
+				height: 50px;
+				position: absolute;
+				bottom: 135px;
+				color: #fff;
+				font: 26px/50px "微软雅黑";
+				left: 13px;
+				text-align: center;
+			}
+			
+			#a1:hover {
+				background: #3a352e;
+			}
+			
+			.box2 #a2 {
+				width: 35px;
+				height: 50px;
+				position: absolute;
+				bottom: 135px;
+				color: #fff;
+				font: 26px/50px "微软雅黑";
+				left: 520px;
+				text-align: center;
+			}
+			
+			#a2:hover {
+				background: #3a352e;
+			}
+			
+			#sp1 {
+				height: 14px;
+				font: 14px/14px "微软雅黑";
+				color: #fff;
+				position: absolute;
+				top: 105px;
+				left: 265px;
+			}
+			
+			#sp2 {
+				height: 14px;
+				font: 14px/14px "微软雅黑";
+				color: #fff;
+				position: absolute;
+				bottom: 12px;
+				left: 265px;
+			}
+			
+			#zhe1 {
+				display: none;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			#zhezhao2 {
+				display: none;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.bg1 {
+				width: 298px;
+				height: 148px;
+				background: #000;
+				border: 1px solid #898988;
+				border-radius: 3px;
+				opacity: 0.5;
+				filter: alpha(opacity:50);
+				position: absolute;
+				left: 336px;
+				top: 312px;
+			}
+			
+			.zhezhao-con {
+				width: 298px;
+				height: 148px;
+				position: absolute;
+				left: 337px;
+				top: 313px;
+			}
+			
+			.zhezhao-con img {
+				position: absolute;
+				top: 14px;
+				right: 14px;
+			}
+			
+			.zhezhao-con span:nth-of-type(1) {
+				width: auto;
+				height: 17px;
+				font: 17px/17px "微软雅黑";
+				color: #fff;
+				position: absolute;
+				top: 36px;
+				left: 85px;
+			}
+			
+			.zhezhao-con span:nth-of-type(2) {
+				width: auto;
+				height: 13px;
+				font: 13px/13px "微软雅黑";
+				color: #8e8e8e;
+				position: absolute;
+				top: 73px;
+				left: 88px;
+			}
+			
+			#yes1 {
+				width: 80px;
+				height: 25px;
+				text-align: center;
+				font: 14px/25px "微软雅黑";
+				color: #fff;
+				border: 1px solid #fff;
+				border-radius: 3px;
+				position: absolute;
+				bottom: 19px;
+				left: 106px;
+			}
+			
+			#yes2 {
+				width: 80px;
+				height: 25px;
+				text-align: center;
+				font: 14px/25px "微软雅黑";
+				color: #fff;
+				border: 1px solid #fff;
+				border-radius: 3px;
+				position: absolute;
+				bottom: 19px;
+				left: 106px;
+			}
+			#qh .active{
+				background: #fff;
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="box1">
+				<div class="box2">
+					<div id="qh">
+						<a href="javescript:;" id="qh1">循环切换</a>
+						<a href="javescript:;" id="qh2">顺序切换</a>
+					</div>
+					<p id="ppc">图片可从最后一张跳转到第一张循环切换</p>
+					<img src="images2/02.jpg" id="img">
+					<span id="sp1">1/4</span>
+					<span id="sp2">文字描述一</span>
+					<a href="javescript:;" id="a1">
+						<</a>
+							<a href="javescript:;" id="a2">></a>
+				</div>
+			</div>
+		</div>
+		<div id="zhe1">
+			<div class="bg1"></div>
+			<div class="zhezhao-con">
+				<img id="cha1" src="images2/04.png" />
+				<span>JavaScript提醒</span>
+				<span>已经到最后一张啦~</span>
+				<a id="yes1" href="javascript:;">确定</a>
+			</div>
+		</div>
+		<div id="zhezhao2">
+			<div class="bg1"></div>
+			<div class="zhezhao-con">
+				<img id="cha2" src="images2/04.png" />
+				<span>JavaScript提醒</span>
+				<span>这已经是第一张啦~</span>
+				<a id="yes2" href="javascript:;">确定</a>
+			</div>
+		</div>
+		<script>
+			var img = document.getElementById('img');
+			var a1 = document.getElementById('a1');
+			var a2 = document.getElementById('a2');
+			var qh1 = document.getElementById('qh1');
+			var qh2 = document.getElementById('qh2');
+			var ppc = document.getElementById('ppc');
+			var arrp = ['1/4', '2/4', '3/4', '4/4'];
+			var cha1 = document.getElementById('cha1');
+			
+			var arro = ['文字描述一', '文字描述二', '文字描述三', '文字描述四'];
+			var arr = ['images2/02.jpg', 'images2/03.jpg', 'images2/04.jpg', 'images2/05.jpg'];
+			var n = 0;
+			var onOff = true;
+			//初始化
+			qh1.className = 'active';
+			//循环
+			qh1.onclick = function(){
+				onOff = true;
+				qh1.className = 'active';
+				qh2.className = '';
+				ppc.innerHTML = '图片可从最后一张跳转到第一张循环切换';
+			}
+			//顺序
+			qh2.onclick = function(){
+				onOff = false ;
+				qh1.className = '';
+				qh2.className = 'active';
+				ppc.innerHTML = '图片只能到最后一张或第一张切换';
+			}
+			//向右切换
+			a2.onclick = function() {
+				n++;
+				//循环模式限制条件
+				if(n > arr.length - 1) {
+					if(onOff) {
+						n = 0;
+					} else {
+						n = arr.length - 1;
+						zhe1.style.display = 'block';
+					}
+				}
+				tab()
+			}
+			//向左切换
+			a1.onclick = function(){
+				n--;
+				if(n < arr.length - 4) {
+					if(onOff) {
+						n = arr.length - 1;
+					} else {
+						n = 0;
+						zhezhao2.style.display = 'block';
+					}
+				}
+				tab()
+			}
+			//确定1
+			yes1.onclick = function() {
+				zhe1.style.display = 'none';
+			}
+			//确定2
+			yes2.onclick = function() {
+				zhezhao2.style.display = 'none';
+			}
+			//X1
+			cha1.onclick = function() {
+				zhe1.style.display = 'none';
+			}
+			//X2
+			cha2.onclick = function() {
+				zhezhao2.style.display = 'none';
+			}
+			function tab(){
+				img.src = arr[n];
+				//生成1/？
+				sp1.innerHTML = arrp[n];
+				//生成文字描述？
+				sp2.innerHTML = arro[n];
+			}
+		</script>
+	</body>
+
+</html>
