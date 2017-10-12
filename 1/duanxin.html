@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			ul,
+			ol,
+			dl,
+			dd {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 12px;
+				font-family: "微软雅黑";
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+				display: block;
+				text-decoration: none;
+			}
+			
+			img {
+				border: 0;
+			}
+			
+			.box1 {
+				width: 339px;
+				height: 679px;
+				background: #e3e3ed url(images/3.png) no-repeat 152px 624px;
+				border-radius: 16px;
+				padding: 22px 0px 0px 17px;
+				position: relative;
+			}
+			
+			.box1 .pic1 {
+				width: 58px;
+				height: 4px;
+				margin-left: 137px;
+				margin-bottom: 19px;
+			}
+			
+			.cen {
+				width: 318px;
+				height: 558px;
+				border: 2px solid #bfbfbf;
+				background: #fff;
+			}
+			
+			#list {
+				width: 318px;
+				height: 498px;
+				/*position: relative;
+				top: 0;*/
+				overflow: hidden;
+			}
+			
+			li {
+				width: 280px;
+				line-height: 30px;
+				font-size: 14px;
+				margin: 10px;
+			}
+			.right{
+				float: right;
+				background: url(images/2.png) no-repeat right;
+				color: #000;
+			}
+			.sp1{
+				background: #bab3ce;
+				width: 230px;
+				display: block;
+				border-radius: 5px;
+			}
+			.left1{
+				float: left;
+				background: url(images/1.png) no-repeat left;
+				color: #fff;
+			}
+			.sp2{
+				background: #e5e5e5;
+				width: 230px;
+				display: block;
+				margin-left: 50px;
+				border-radius: 5px;
+			}
+			.pur {
+				width: 318px;
+				height: 60px;
+				background: #e5e5e5;
+			}
+			
+			.pur #a1,
+			.pur img {
+				width: 34px;
+				height: 40px;
+				float: left;
+			}
+			
+			.pur #a1,
+			.pur #a2 {
+				margin: 11px 0px 0px 17px;
+			}
+			
+			input {
+				width: 190px;
+				line-height: 34px;
+				border-radius: 15px;
+				float: left;
+				margin: 11px 0px 0px 15px;
+			}
+			
+			.pur #a2 {
+				width: 34px;
+				height: 40px;
+				font: 15px/34px "微软雅黑";
+				color: #e15671;
+				float: left;
+			}
+			#zhezhao{
+				display: none;
+				width: 298px;
+				height: 148px;
+				position: absolute;
+				top: 70px;
+				left: 30px;
+				background: red;
+			}
+			#zhe1{
+				width: 298px;
+				height: 148px;
+				background: #000;
+				border: 1px solid #898988;
+				border-radius: 3px;
+				opacity: 0.5;
+				filter: alpha(opacity:50);
+				position: absolute;
+				left: 336px;
+				top: 312px;
+			}
+			#zhe2{
+				width: 298px;
+				height: 148px;
+				position: absolute;
+				left: 337px;
+				top: 313px;
+			}
+			#zhe2 span:nth-of-type(1) {
+				width: auto;
+				height: 17px;
+				font: 17px/17px "微软雅黑";
+				color: #fff;
+				position: absolute;
+				top: 36px;
+				left: 85px;
+			}
+			
+			#zhe2 span:nth-of-type(2) {
+				width: auto;
+				height: 13px;
+				font: 13px/13px "微软雅黑";
+				color: #8e8e8e;
+				position: absolute;
+				top: 73px;
+				left: 88px;
+			}
+			
+			#yes1 {
+				width: 80px;
+				height: 25px;
+				text-align: center;
+				font: 14px/25px "微软雅黑";
+				color: #fff;
+				border: 1px solid #fff;
+				border-radius: 3px;
+				position: absolute;
+				bottom: 19px;
+				left: 106px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="box1">
+				<img src="images/003.jpg" class="pic1" />
+				<div class="cen">
+					<ul id="list"></ul>
+					<div class="pur">
+						<a href="javescript:;" id="a1"><img id="aa" src="images/1.png" /></a>
+						<from>
+							<input type="text" placeholder="请输入文字" id="inp">
+						</from>
+						<a href="#" id="a2">发送</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var a1 = document.getElementById('a1');
+			var aa = document.getElementById('aa');
+			var a2 = document.getElementById('a2');
+			var inp = document.getElementById('inp');
+			var list = document.getElementById('list');
+			var onOff = true;
+			var ppt = 0;
+			//红蓝头像切换
+			a1.onclick = function() {
+				if(onOff) {
+					aa.src = 'images/2.png';
+					onOff = false;
+					ppt = 1;
+				} else {
+					aa.src = 'images/1.png';
+					onOff = true;
+					ppt = 0;
+				}
+			}
+			//发送
+			var lis = document.getElementsByTagName('li')
+//			var h = list.offsetHeight; 
+//			var t = lis.offsetHeight;
+//			var m = 0;
+			a2.onclick = function() {
+//				m-=30;
+//				list.style.top = m+'px';
+//				console.log(list);
+				if(inp.value==''){
+					alert('空')
+				}else if(ppt==1) {
+					list.innerHTML = list.innerHTML+'<li class="right"><span class="sp1">'+inp.value+'</span></li>';
+					inp.value='';
+				}else if(ppt==0){
+					list.innerHTML = list.innerHTML+'<li class="left1"><span class="sp2">'+inp.value+'</span></li>';
+					inp.value='';
+				}
+			}
+		</script>
+	</body>
+
+</html>

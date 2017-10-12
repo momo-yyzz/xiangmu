@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//兼容滚轮函数
+			function Wheel(obj,fn){
+		        //火狐浏览器
+		        if(obj.onmousewheel === undefined){
+		            obj.addEventListener('DOMMouseScroll',fn1);
+		        }else{
+		        //谷歌浏览器
+		            obj.addEventListener('mousewheel',fn1);
+		        }
+		        function fn1(ev){
+		        	//n = 真
+		            var n = true;
+		            //n值大于0为真  n值小于0为假
+		            if(ev.wheelDelta){
+		                n = ev.wheelDelta>0 ? true : false;
+		                console.log(n)
+		            }else{
+		                n = ev.detail < 0?true : false;
+		            }
+		            
+		            fn && fn(n);
+		            console.log(n)
+		        }
+		    }
+		    Wheel(document,function(n){
+		        if(n){
+		        	//n值大于0为上
+		            alert('上');
+		        }else{
+		        	//n值小于0为下
+		            alert('下');
+		        }
+		    });
+		
+		</script>
+	</body>
+</html>

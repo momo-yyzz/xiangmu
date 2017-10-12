@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+body{
+	background: #2f2a78;
+	overflow: hidden;
+}	
+.warp{
+	width:101px;
+	height: 387px;
+	background: #fff;
+	margin: 200px auto;
+}
+#box{
+	width:88px;
+	height: 387px;
+	float:left;
+	overflow: hidden;
+	position: relative;
+}
+#div1{
+	width:13px;
+	height: 387px;
+	float: right;
+	position:relative;
+	background: #ccc;
+}
+#div3{
+	width:9px;
+	height:72px;
+	background:url(bg.png) 0px -12px no-repeat;
+	position: absolute;
+	top:0;
+	left: 2px;
+}
+#div2{
+	width:13px;
+	height: 367px;
+	margin-top: 10px;
+	position: relative;
+}
+#top{
+	width:11px;
+	height: 10px;
+	background:url(bg.png) 0 0 no-repeat;
+	position: absolute;
+	top:0;
+	left:1px;
+}
+#bottom{
+	width:11px;
+	height: 10px;
+	background:url(bg.png) -12px 0 no-repeat;
+	position: absolute;
+	bottom:0;
+	left:1px;
+}
+#ul{
+	list-style: none;
+	width:88px;
+	position: absolute;
+	top:0;
+}
+li{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<section class="warp">
+		<div id="box">
+			<ul id="ul">
+				<!-- <li>北京</li>
+				<li>北京</li>
+				<li>北京</li>
+				<li>北京</li>
+				<li>北京</li> -->
+			</ul>
+		</div>
+		<div id="div1">
+			<div id="top"></div>
+			<div id="div2">
+				<div id="div3"></div>
+			</div>
+			<div id="bottom"></div>
+		</div>
+	</section>
+<script src="data.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	//获取操作的内容元素
+	var ul = document.getElementById('ul');
+	//滚动条
+	var div1 = document.getElementById('div1');
+	//滚动小条
+	var div2 = document.getElementById('div2');
+	//拖动条
+	var div3 = document.getElementById('div3');
+	
+	//循环data数据生成结构
+	arrCity.forEach(function(e,i){
+		if(i != 0){
+			ul.innerHTML += '<li>'+e.name+'</li>';
+		}
+	});
+	//拖动条按下的时候执行
+	div3.onmousedown = function(ev){
+		//鼠标按下的位置减去滚轮的位置
+		var disY = ev.clientY - div3.offsetTop;
+		console.log(disY)
+		document.onmousemove = function(ev){
+			var t = ev.clientY - disY;
+			move(t);
+		}
+		//拖动条抬起的时候执行
+		document.onmouseup = function(){
+			document.onmouseup = document.onmousemove = null;
+		}
+		return false;
+	};
+
+	//把元素传进去执行封好的滚轮兼容函数
+	Wheel(box,function(o){
+		var t = div3.offsetTop;
+		if(o){
+			//--每次-5
+			t -= 5;
+			move(t);
+		}else{
+			//++每次+5
+			t += 5;
+			move(t);
+		}
+	});
+
+	//点击
+	var timer = null;
+	//滚动条按下
+	div1.onmousedown = function(ev){
+		//开启定时器效果
+		timer = setInterval(function(){
+			//获取滚动条的top值
+			var t = div3.offsetTop;
+			console.log(t)
+			//限制到头
+			if(ev.clientY < div3.getBoundingClientRect().top){
+				t -= 5;
+				move(t);
+			//限制到底
+			}else if(ev.clientY > div3.getBoundingClientRect().bottom){
+				t += 5;
+				move(t);
+			}else{
+				clearInterval(timer);
+			}
+		},30);
+	}
+	//滚动条抬起
+	div1.onmouseup = function(ev){
+		clearInterval(timer);
+	}
+
+	//运动函数
+	function move(t){
+		if(t < 0){
+			t = 0;
+		}else if(t > div2.offsetHeight - div3.offsetHeight){
+			t = div2.offsetHeight - div3.offsetHeight;
+		}
+		//分成比例份数滚动条走多少内容走多少
+		var scale = t/(div2.offsetHeight - div3.offsetHeight);
+		ul.style.top = scale * (box.offsetHeight - ul.scrollHeight) + 'px';
+		div3.style.top = t + 'px';
+	}
+	//兼容滚轮函数
+	function Wheel(obj,fn){
+        //火狐浏览器
+        if(obj.onmousewheel === undefined){
+            obj.addEventListener('DOMMouseScroll',fn1);
+        }else{
+        //谷歌浏览器
+            obj.addEventListener('mousewheel',fn1);
+        }
+        function fn1(ev){
+        	//n = 真
+            var n = true;
+            //n值大于0为真  n值小于0为假
+            if(ev.wheelDelta){
+                n = ev.wheelDelta>0 ? true : false;
+                console.log(n)
+            }else{
+                n = ev.detail < 0?true : false;
+            }
+            fn && fn(n);
+            console.log(n)
+        }
+    }
+
+
+</script>
+</body>
+</html>
