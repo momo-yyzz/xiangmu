@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   /*
+       string.replace(字符串||正则,字符串||回调函数)
+
+       替换匹配的字符串
+            第一个参数:
+                匹配的字符串
+            第二个参数:
+                替换的字符串
+
+        返回值：
+            替换后的字符串。
+
+        || 或 |
+
+        敏感词替换
+
+        回调函数参数（默认情况）：
+            第一个参数：
+                找到匹配的字符
+            第二个参数:
+                索引
+            第三个参数:
+                整个字符串
+            第三个之后:
+                undefined    
+            
+   */
+    var str = '中国共产党总书记习近平说:“法轮功是邪教”';
+
+    var s = str.replace(/共产党|习近平|法轮|邪教/g,function($0,$1,$2,$3){
+        // console.log($3);
+        var temp = ''; 
+        for(var i=0;i<$0.length;i++){
+            temp += '*';
+        }
+        return temp;
+    });
+
+    console.log(s);
+
+
+
+</script>
+</body>
+</html>

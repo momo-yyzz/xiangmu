@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var str = 'a1ca2ca3ca4ca23caacabcaccadcaAcaBcaZc';
+
+    /*
+        在中括号中，只选择一个
+
+        如果要找数字  0-9
+        字母   a-z
+
+        18-108岁
+
+        [18-108]
+
+        dsadsaddsdsad sadsadsadsad jhh kjh jkdsa
+
+        ^ 开头  
+        $ 结尾
+    */
+
+    // console.log(str.match(/a\dc/g));
+    // console.log(str.match(/a(2|3)c/g));
+
+    // console.log(str.match(/a[1-4]c/g));
+    // console.log(str.match(/a[A-z]c/g));
+    //console.log(str.match(/a[A-Za-z]c/g));
+
+    //console.log(/[(18)-(108)][0-9]/.test('18'));
+
+    console.log(/^1[89]$|^[2-9][0-9]$|^10[0-8]$/.test('108'));
+
+</script>    
+</body>
+</html>

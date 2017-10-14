@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        模板
+
+            \w   一个数字|字母|下划线
+    */
+    var obj = {
+        name:'小明',
+        age:23,
+        sex:'男'
+    }
+
+    var str = '我的名字叫{name},今年{age}岁,性别{sex}';
+
+    str = str.replace(/{(\w+)}/g,function($0,$1){
+       // alert(1);
+        console.log($1);
+        return obj[$1];
+    });
+    console.log(str);
+
+
+</script>    
+</body>
+</html>

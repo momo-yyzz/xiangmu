@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   /*
+       string.replace(字符串||正则,字符串||回调函数)
+
+       替换匹配的字符串
+            第一个参数:
+                匹配的字符串
+            第二个参数:
+                替换的字符串
+
+        返回值：
+            替换后的字符串。
+
+        || 或 |
+
+        敏感词替换
+            
+   */
+  
+//    var s = 'miaov';
+//    console.log(s.replace('m','M'));
+
+    var str = '中国共产党总书记习近平说:“法轮功是邪教”';
+
+    console.log(str.replace(/共产党|习近平|法轮|邪教/g,'*'));
+
+
+
+</script>
+</body>
+</html>

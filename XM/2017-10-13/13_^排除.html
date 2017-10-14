@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documen1t</title>
+</head>
+<body>
+<script>
+    /*
+        如果小尖尖在中括号中，就是排除的意思。
+    */
+    var str = 'a1ca22ca3cabcafcayc';
+
+    //排除a2ca3c
+    // console.log(str.match(/a[^23y]c/g));
+
+    console.log(str.match(/a[^1]2c/g));
+
+
+</script>    
+</body>
+</html>

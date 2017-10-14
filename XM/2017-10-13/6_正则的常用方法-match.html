@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   /*
+        string.match(//);
+            把正则匹配到的字符提取出来，放到数组中(返回值为数组)
+
+            能匹配到就放在数组中，匹配不到返回null
+
+            小细节:
+                如果只匹配到了一个，那么数组中不只一个东西，
+                但是**length为1
+                
+                第一个为匹配到的字符
+                第二个为匹配字符的索引
+                第三个整个字符串
+
+        量词:
+            +    最小一个最大不限
+            修饰前面的规则数量
+
+        修饰符:
+            g  global  全局
+
+        特性:
+            贪婪:
+                一直找
+            懒惰:
+                找到一次之后就不再找了（直接返回）
+   */
+  //console.dir(new String());
+
+  var str = 'dsd5637X2328236jdsdscxdxc37X83kljk54ls3x2xkd4rnej7';
+
+//   console.log(str.match(/\d+/g));
+
+    // console.log(str.match(/x+/ig));
+    // console.log(str.match(new RegExp('x+','ig')));
+    console.log(str.match(/z+/ig));//null
+</script>
+</body>
+</html>

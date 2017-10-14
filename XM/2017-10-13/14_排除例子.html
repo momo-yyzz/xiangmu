@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documen1t</title>
+</head>
+<body>
+    
+    <textarea name="" id="txt1" cols="30" rows="10"></textarea>
+    <hr>
+    <textarea name="" id="txt2" cols="30" rows="10"></textarea>
+    <button id="btn">过滤标签</button>
+<script>
+    
+    // <div class="item">
+    /*
+        
+
+        < [^>]+
+    */
+
+   console.log('<span> 数据类型 </span>'.match(/<[^>]+>/g))
+  
+
+
+    btn.onclick = function(){
+        var str = txt1.value.replace(/<[^>]+>/g,'');
+        
+        txt2.innerHTML = str.replace(/\s+/g,'');
+    };     
+
+
+    /*
+        <div class="item">
+            <span>数据类型</span>
+            <em>03</em>
+            <div class="line"></div>
+        </div>
+    */
+
+    /*
+        <ul class="list mar_md half"><!--mar_xs 让里面的li间距为2px; sm:5px; md:10px; lg:20px 当然 间距的增加代表了个数的减少-->
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>JS入门</span><em>02</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>数据类型</span><em>03</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>定时器</span><em>04</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>字符串</span><em>05</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>DOM</span><em>06</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>BOM</span><em>07</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>事件基础</span><em>08</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>事件应用</span><em>09</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>正则表达式</span><em>10</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>面向对象基础</span><em>11</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>高级面向对象</span><em>12</em><div class="line"></div></div>
+                            </li>
+                                                                                    <li>
+                                <div class="box"><div class="middle"></div></div>
+                                <div class="item"><span>组件开发</span><em>13</em><div class="line"></div></div>
+                            </li>
+                                                                                </ul>
+    */
+</script>    
+</body>
+</html>

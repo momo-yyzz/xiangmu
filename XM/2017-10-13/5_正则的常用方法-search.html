@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        string.search()
+            查找字符串指定字符的位置。 
+        找到范围位置，没找到返回-1;   
+        
+        修饰符:
+            i -  忽略大小写。
+    */
+
+    //console.dir(new String());
+
+    var s = 'dshjdsdXak0jkadak';
+
+    // console.log(s.indexOf('x'));
+    // console.log(s.search('x'));
+    // console.log(s.search(/\d/));
+    // console.log(s.search(/x/i));
+    console.log(s.search(new RegExp('x','i')));
+
+</script>
+</body>
+</html>
