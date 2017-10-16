@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //计算下面字符串中的字节总数是多少，假设一个汉字为2个字节，字母为1个字节
+    //[\u4e00-\u9fa5] 中文的区间范围
+    var str = 'hello!欢迎大家来带妙味课程!';//27
+//  var num = 0;
+//  for(var i=0;i<str.length;i++){
+//      if(/[\u4e00-\u9fa5]/.test(str[i])){
+//          num += 2;
+//      }else{
+//          num ++;
+//      }
+//  }
+
+    /*中文区间范围
+        [\u4e00-\u9fa5]  
+     * */
+	var n = 0;
+    for(var i=0;i<str.length;i++){
+    	//如果是中文转成2个字节
+    	if(/[\u4e00-\u9fa5]/.test(str[i])){
+    		n +=2;
+    	}else{
+    		n++;
+    	}
+    }
+    console.log(n);  //共27个字节
+
+
+</script>
+</body>
+</html>

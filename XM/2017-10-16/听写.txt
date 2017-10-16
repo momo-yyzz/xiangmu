@@ -1,0 +1,41 @@
+1.什么是git，什么是github
+git是版本控制工具，github是程序员基友网站，学习、代码托管、远程仓库、参与开源项目
+
+2.如何才能版本控制？
+至少要有.git的文件夹(建议在github上创建一个项目) -> 克隆到本地 ->
+->在带master的盘符文件夹中使用 git add 文件名 -> git commit -m "注释" 
+
+3.删除指定文件
+git rm -f 
+
+
+4.如何回滚指定版本？
+git reset --hard 版本编号
+
+
+5.当提交代码的时候如果遇到了冲突你是如何解决的？
+1）.先把远程的代码拉取下来（git fetch）
+
+2）.查看冲突（git diff master origin/master）
+
+3）.合并（git merge origin/master）
+
+4）.手动删除没用的
+
+5）.提交 -> 上传
+
+
+6.增、删、查、切换分支的命令各是什么？
+
+1）git brach 分支名
+
+2）git branch -d/-D
+
+3）git branch
+
+4）git checkout 分支名 /  git checkout -b 分支名
+
+
+7.什么是正则？
+
+是一种专门用来检索模糊范围字符串的一种规则。

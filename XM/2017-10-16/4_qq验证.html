@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.ok{
+    border:1px solid green;
+    color:green;
+}
+.error{
+    border:1px solid red;
+    color:red;
+}
+</style>
+</head>
+<body>
+    <input type="text" id="txt"/>
+    <button id="btn">提交</button>
+<script>
+    var txt = document.getElementById('txt');
+    var btn = document.getElementById('btn');
+    //btn.onclick = function(){
+        /*
+            qq的规则：
+                都是数字，第一个不能为0，5-12位
+        */
+        //var v = txt.value;
+        // if(v){
+        //     // if(/^[1-9]\d{4,11}$/.test(v.trim())){
+        //     //     txt.className = 'ok';
+        //     // }else{
+        //     //     txt.className = 'error';
+        //     // }
+            
+        //     txt.className = /^[1-9]\d{4,11}$/.test(v.trim())?'ok':'error';
+
+        // }else{
+        //     alert('请输入内容!');
+        // }
+        
+        //!v?alert('请输入内容!'):(txt.className = /^[1-9]\d{4,11}$/.test(v.trim())?'ok':'error');
+
+    //}
+    
+    /*******************************验证QQ**********************************************/
+   
+    //qq的规则：都是数字，第一个不能为0，5-12位
+    //trim 去除前后空格
+    //输入框点击事件
+   	btn.onclick = function(){
+   		var p = txt.value;
+   		//有内容进判断
+   		if(p){
+   			//满足都是数字，第一个不能为0，5-12位
+   			if(/^[1-9]\d{4,11}$/.test(p.trim())){
+   				txt.className = 'ok';
+   			}else{
+   				//不满足
+   				txt.className = 'error';
+   			}
+   		//无内容弹不能为空
+   		}else{
+   			alert('不能空！')
+   		}
+   	}
+   	//三目简写：
+   	//!v?alert('请输入内容!'):(txt.className = /^[1-9]\d{4,11}$/.test(p.trim())?'ok':'error');
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        {}:
+            数量的范围  -> 量词
+        +  {1,}
+        ?  {0,1}
+        *  {0,}   最小0次，最多不限
+
+        {start,end}
+        
+
+    */
+
+    var str = 'a31389ca6372ca7434364737ca1ca12ca56c';
+    //'2017-10-16';//'d1sadw2ds34j6565hae2323';
+
+    //console.log(str.match(/\d{1,}/g));  //["31389", "6372", "7434364737", "1", "12", "56"]
+    //console.log(str.match(/\d{1,}\D+\d+\D+\d+\D{0,1}/g));  // ["31389ca6372ca7434364737c", "1ca12ca56c"]
+    //console.log(str.match(/\d{3,5}/g))  //["31389", "6372", "74343", "64737"];
+</script>
+</body>
+</html>

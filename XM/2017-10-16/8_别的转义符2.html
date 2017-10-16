@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        \W 非数字字母下划线
+
+        \S 非空格
+
+        \b 边界符:
+            遇到汉字就有边界符，如果有2个字，
+            那么第一个字与第二个字之间是没有边界符的。
+
+        '|ds| |ds|';
+    */
+
+    // var str = 'a你ca好ca8cahc';
+    // console.log(str.match(/a\Wc/g));
+
+    var str = 'a你好cakc a8cahc';
+
+    console.log(str.replace(/\b/g,'|'))
+
+    
+
+</script>
+</body>
+</html>

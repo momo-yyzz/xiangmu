@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			/*
+		        {}:
+		            数量的范围  -> 量词
+		        +  {1,}
+		        ?  {0,1}
+		        *  {0,}   最小0次，最多不限
+		
+		        {start,end}
+		    */
+			
+			
+			
+			/*
+		        \w 数字字母下划线
+		        \d 
+		        \D
+		        \s 空格
+		        \W 非数字字母下划线
+			trim
+		        去掉首尾空格
+		    */
+		   
+		   
+		   //  /s/
+		    //new RegExp('' + s + '')
+		    /*
+		        /(^|\s)li(\s|$)/;
+		
+		        \\n
+		
+		        重点：
+		            1.找规律
+		            2.使用new RegExp()
+		                如果使用标准正则写法，那么第一个里面可以为字符串，
+		                这个时候就可以使用变量，如果规则中使用转义符，记得
+		                要转义。如 \\s   /|\都需要转换。
+		            var s = '123';
+		            /s/ -> 's'
+		            new RegExp(s,'g') -> '123'
+		
+		    */
+		   
+		   
+		   
+			/*
+			 找出下列字符串中数量最多的是谁？有几个？
+			 * */
+			
+			var str = 'a0021s2a4a8f33114asd17q91821jdsidsja2hsjadh092126g23g62gd6sdh';
+			//创建一个变量 = 负无穷
+			var min = -Infinity;
+			var n = '';
+			str = str.split('').sort().join('');
+			//console.log(str)  //分割完排好的顺序
+			
+			str.replace(/(\w)\1+/g,function($0,$1){
+				//console.log($1)  //(\w)
+				if(min<$0.length){
+					min = $0.length;
+					n = $1;
+				}
+				console.log($0)
+			});
+			console.log('重复最多的是'+n+'一共出现了'+min+'次');
+		</script>
+	</body>
+</html>

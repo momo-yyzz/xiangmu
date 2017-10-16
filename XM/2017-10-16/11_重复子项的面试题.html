@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        找出下列字符串中数量最多的是谁？有多少个？
+    */
+    var str = '0d302sa00ud04yy553y210a0udyt27036320190e03029y27';
+    var min = -Infinity;
+    var index = '';
+    str = str.split('').sort().join('');
+
+    str.replace(/(\w)\1+/g,function($0,$1){
+       // console.log($1)
+       if(min < $0.length){
+         min = $0.length;
+         index = $1;
+       }
+    });
+
+    console.log('最多的是'+index+'，出现了'+min+'次');
+    // console.log(str);
+
+
+ /*************************************************************/   
+    
+    
+    // var json = {};
+    // for(var i=0;i<str.length;i++){
+    //     if(!json[str[i]]){
+    //         json[str[i]] = 1;
+    //     }else{
+    //         json[str[i]] ++;
+    //     }
+    // }
+
+    // var min = -Infinity;
+    // var index = '';
+
+    // for(var attr in json){
+    //     if(json[attr] > min){
+    //         min = json[attr];
+    //         index = attr;
+    //     }
+    // }
+
+    // console.log('最多的是'+index+'，出现了'+min+'次');
+
+</script>
+</body>
+</html>

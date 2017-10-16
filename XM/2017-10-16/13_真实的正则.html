@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        已知手机号后4位,找出这条数据
+
+        8888
+        
+    */
+    var arr = ['18188881016','18188884783','15788888888','13888888888','13888884783','15888887872'];
+    var val = '8888';
+    var arr2 = [];
+    arr.forEach(function(e,i){
+        if(new RegExp(val+'$').test(e)){
+            arr2.push(e);
+        }
+    });
+    console.log(arr2);
+    
+
+
+
+</script>
+</body>
+</html>

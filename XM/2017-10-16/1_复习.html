@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+ /*
+    1.//.test(string)
+
+    2.string.search(''|//)
+
+    3.string.match(//) [] null
+
+    4.string.replace(''|// , ''|callback )
+        callback:
+         第一个参数都是前面规则匹配到的字符
+            有子项
+               第二个参数就是子项包着的内容
+
+            无子项
+                第二个参数就是匹配到的索引
+
+        子项:
+            (a((\d))+c)
+            提权
+        |  或者
+
+        []:
+            在中括号中如果有多个取其中一个
+            字母:a-z  A-Z   A-Za-z
+            数字:0-9
+            18-108
+        ^1[8-9]$|^[2-9][0-9]$|^10[0-8]$ 
+        
+        [^]  排除
+
+        <span class="active" id="box" abc="1">呵呵</span>
+
+        /<[^>]+>/g
+
+        i  + \d \D \w(数字字母下划线) \s(空格)   ? 2017-10-xx日
+
+ */
+    //123     987
+    var str = 'a119ca22228ca35337cahcajc'; //数字
+
+    str.replace(/(a(((\d)))+c)/g,function($0,$1,$2,$3){
+        console.log($3);
+    });
+    str = str.replace(/a(\d)c/g,function($0,$1,$2){
+        // console.log($2);
+        return 'a数字c';
+    })
+    console.log(str);
+
+</script>
+</body>
+</html>
