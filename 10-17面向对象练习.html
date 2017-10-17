@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.active{
+				background: yellow;
+			}	
+			#box div{
+				width:200px;
+				height: 200px;
+				border: 1px solid #000;
+				display: none;
+			}
+			#box div.show{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" value="按钮一" class="active" />
+			<input type="button" value="按钮二" />
+			<input type="button" value="按钮三" />
+			<div class="show">1111111</div>
+			<div>222222</div>
+			<div>333333333</div>
+		</div>
+		<script>
+			
+//			function Fn(name){
+//				this.name = name;
+//			}
+//			Fn.prototype.say = function(){
+//				alert(this.name);
+//			}
+//			
+//			var f = new Fn('赵俊伟');
+//			var f2 = new Fn('韩飞龙');
+//			
+//			f.say();
+//			f2.say();
+//			console.log(f)
+			
+			
+//			function Person(name,age,sex,job){
+//				this.name = name;
+//				this.age = age;
+//				this.sex = sex;
+//				this.job = job;
+//			}
+//			Object.prototype.say = function(){
+//				alert(this.job);
+//			}
+//			
+//			var p = new Person('赵俊伟',25,'男','前端开发');
+//			console.dir(p)
+
+
+			/**********************面向对象选项卡***************************************/
+			
+			//归类
+			function Tab(id){
+				this.box = document.getElementById(id);
+				this.btn = this.box.getElementsByTagName('input');
+				this.divs = this.box.getElementsByTagName('div');
+			}
+			
+			//给按钮绑定事件，并且执行某些事情
+			Tab.prototype.Event = function(){
+				//Tab
+				var _this = this;
+				for(var i=0;i<this.btn.length;i++){
+					this.btn[i].index = i;
+					this.btn[i].onclick = function(){
+						_this.tabs(this);
+						//console.log(this);//当前点击的btn
+						//console.log(this.index)//当前点击的数
+					}
+				}
+			}
+			
+
+			//当前点击的btn要执行的事件
+			Tab.prototype.tabs = function(that){
+				//大清洗
+				for(var i=0;i<this.btn.length;i++){
+					this.btn[i].className = this.divs[i].className = '';
+				}
+				//对于按钮加上样式
+				that.className = 'active';
+				//对应内容出现
+				this.divs[that.index].className = 'show';
+			}
+			
+			
+			var t = new Tab('box');
+			t.Event();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        new RegExp();
+
+        new Date();
+
+        new String
+
+        new Array
+
+        new Object
+    
+        构造函数首字母要大写
+
+
+    */
+
+    //工厂函数、类、构造函数
+    function Person(name,age,sex){
+        // var obj = {};//原材料
+
+        //加工
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.say = function(){
+            alert('我叫'+this.name);
+        }
+
+        // //出厂
+        // return obj;
+    }
+
+    var lg =  new Person('李庚',28,'男');
+
+    lg.say();
+
+    console.log(lg);
+</script>
+</body>
+</html>

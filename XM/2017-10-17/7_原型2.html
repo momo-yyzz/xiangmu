@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        面向对象：
+            把具有共同特性的代码归为一类，
+            把它的细节描述挂在原型上的一种编程方式。
+
+        特性：
+            抽象、继承、封装
+
+        new :
+            this -> 对象
+            默认return this
+            new fn
+
+
+        prototype  原型，只要是函数都有这个属性，值对象，解决性能问题的
+
+        __proto__  原型链  只要是对象都有原型链，它是链接对象与构造函数的桥梁.
+
+        对象没有原型只有原型链,而函数既有原型也有原型链，***构造函数的原型只给它的实例化对象使用***。
+
+        []  new Array  {} new Object  fuction new Function
+
+
+        一般面向对象都是把属性挂在构造函数中，
+        把方法挂在构造函数的原型上。
+
+
+        对象找链 -> 构造函数找原型 -> 找值下的链
+
+        p.say  -> Person.prototype -> Object.prototype
+
+        Person.prototype = {
+            __proto__:
+        }
+
+
+    */
+
+    function Person(name,age,sex,job){
+        this.name = name;
+        this.age = age;
+        this.sex = sex ;
+        this.job = job;
+    }
+
+    // Person.prototype.say = function(){
+    //     alert(this.name);
+    // }
+    Object.prototype.say = function(){
+        alert(this.job);
+    }
+
+    var p = new Person('陈树营',25,'男','前端开发');
+    p.say();
+
+    console.dir(p);
+    
+
+
+</script>
+</body>
+</html>

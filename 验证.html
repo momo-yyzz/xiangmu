@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录验证</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        h3{
+            margin: 0;
+            font-weight: normal;
+        }
+        a{
+            text-decoration: none;
+            color: #333333;
+        }
+        input{
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+        body{
+            color: #333333;
+            font-family: 'microsoft yahei';
+            background:mediumspringgreen;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .clearfix{
+            *zoom: 1;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .btn{
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 3px;
+            background-color: #00cc99;
+            display: block;
+            color: #ffffff;
+            margin: 50px auto;
+        }
+        .shadow{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .login{
+            position: absolute;
+            width: 400px;
+            background-color: #ffffff;
+            box-shadow: 1px 1px 5px #ffffff;
+            border-radius: 5px;
+            margin: 200px 400px;
+        }
+        .eye{
+            width: 110px;
+            height: 90px;
+            background: url('img/eye.jpg') no-repeat;
+            margin: 10px auto;
+            position: relative;
+        }
+        .single_eye{
+            position: absolute;
+            border: 2px solid #000000;
+            border-radius: 2px;
+        }
+        .eye_left{
+            top: 41px;
+            left: 48px;
+        }
+        .eye_right{
+            top: 41px;
+            left: 70px;
+        }
+        .admin_head{
+            text-align: center;
+            line-height: 40px;
+            color: rgba(0,0,0,0.6);
+        }
+        .info{
+            padding: 20px;
+        }
+        .ad_wrap{
+            margin-bottom: 10px;
+        }
+        .ad_wrap label{
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            text-align: right;
+        }
+        .ad_wrap input{
+            width: 200px;
+            height: 34px;
+            line-height: 34px;
+            border-radius: 3px;
+            border: 1px solid #cccccc;
+            color: #cccccc;
+            text-indent: 5px;
+            overflow: hidden;
+        }
+        .ad_wrap .ok{
+            border: 1px solid #00cc99;
+            color: #00cc99;
+        }
+        .ad_wrap .err{
+            border: 1px solid #ff2020;
+            color: #ff2020;
+        }
+        .confirm{
+            display: block;
+            width: 260px;
+            height: 50px;
+            margin: 20px auto 0;
+            color: #ffffff;
+            background-color: deepskyblue;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+            border-radius: 3px;
+        }
+        .close{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="shadow">
+        <div class="login">
+            <div class="main">
+                <h3 class="admin_head">登录我的页面</h3>
+                <div class="info">
+                    <div class="ad_wrap clearfix">
+                        <label for="phone" class="fl">手机号：</label>
+                        <input type="text" id="phone" name="phone" class="fl"/>
+                    </div>
+                    <div class="ad_wrap clearfix">
+                        <label for="email" class="fl">邮箱：</label>
+                        <input type="text" id="email" name="email" class="fl"/>
+                    </div>
+                    <div class="ad_wrap clearfix">
+                        <label for="qq" class="fl">QQ：</label>
+                        <input type="text" id="qq" name="qq" class="fl"/>
+                    </div>
+                    <div class="ad_wrap clearfix">
+                        <label for="birthday" class="fl">出生日期：</label>
+                        <input type="text" id="birthday" name="birthday" class="fl"/>
+                    </div>
+                    <div class="sub">
+                        <a href="javascript:void(0);" class="confirm">登录</a>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="close">X</a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+   
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        原型：
+            prototype，函数的一个属性，是解决性能问题的。
+
+           *******  prototype的值是一个对象  ******
+
+           prototype:Object
+
+           fn.prototype = {
+               say:function(){
+
+               }
+           }
+
+            理解成添加class
+
+        __proto__  原型链 :
+           实例化对象与构造函数原型的桥梁
+        __proto__ === 构造函数.prototype
+
+
+        f.say -> f.__proto__ -> Fn.prototype.say
+
+        var arr = [];
+        var arr2 = [];
+
+        Array.prototype.push = function(){
+            alert('呵呵,我把你改了');
+        } 
+        arr.push();
+        arr2.push();
+    */
+
+    function Fn(name){
+        this.name = name;
+        // this.say = function(){
+        //     alert(321);
+        // }
+    }
+
+    Fn.prototype.say = function(){
+        alert(this.name);
+    }
+
+    var f = new Fn('李琴文');
+    var f2 = new Fn('王海莉');
+
+    // f.say = function(){
+    //     alert(123);
+    // }
+
+    f.say();
+    f2.say();
+
+    console.log(f.say == f2.say);
+
+    //console.log(f.__proto__ === Fn.prototype);
+
+    console.dir(f);
+
+</script>
+</body>
+</html>

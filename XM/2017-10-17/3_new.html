@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        new : 函数一元运算符。 专门用来运算的符号
+
+        加了new不加括号依然调用，括号是拿来传参的。
+
+        加了new之后构造中的this指向实例化对象
+
+        默认return  this
+
+        如果return 简单（基础）类型，那么返回值为实例化对象
+
+        如果return 复合（复杂）类型，那么返回值为这个复合（复杂）类型。
+
+
+        new Date 
+    */
+    function fn(){
+        //alert(this); //window
+        //console.log(this)
+        return {name:'呵呵'};
+    }
+
+    // var f = fn();
+
+    var f = new fn;  //f实例化对象
+
+    console.log(f);
+
+    //console.log(new Date);
+</script>
+
+</body>
+</html>

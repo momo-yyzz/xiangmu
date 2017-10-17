@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Person(name,age,sex,job){
+        this.name = name;
+        this.age = age;
+        this.sex = sex ;
+        this.job = job;
+    }
+    /*
+        function Object(){}
+        Object.say  -> Function
+
+
+        实例化对象 p -> 构造函数的原型 -> Object的原型 -> 报错
+
+        Object.say -> Object.__proto__ -> Function.prototype
+        -> Object.prototype -> 报错
+
+    */
+
+    Object.prototype.say = function(){
+        alert('oo');
+    }
+    // Function.prototype.say = function(){
+    //     alert(123);
+    // }
+    // Function.say = function(){
+    //     alert('fn');
+    // }
+    var p = new Person('陈树营',25,'男','前端开发');
+    Function.say();
+    console.dir(Function);
+    
+
+
+</script>
+</body>
+</html>

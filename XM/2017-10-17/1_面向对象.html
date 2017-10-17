@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        面向对象：
+            面向对象是一种思想（一种开发的方式）
+
+        面向对象是一种对现实世界理解和抽象的方法，
+        是计算机编程技术发展到一定阶段后的产物。
+
+
+        面向对象是将具有共同特征的功能或者代码，把它们归为一类（封装方法）
+        把它们需要详细描述的特性挂在原型上的一种编程方式。
+
+        js面向对象的特征：
+            抽象
+            封装
+            继承
+            多态
+
+
+        警察：
+            公务员、抓小偷、好事什么都干
+            人民公仆、为人民服务
+            有枪、穿警服、佩戴警犬、警车
+
+        人类：
+            贵球上食物链顶端的生物
+            有手有脚、直立行走
+            有思想
+
+        人类  + 警察的特征 = 警察
+
+        
+
+        抽象 - >  抽离出像的部分
+    */
+
+    /*
+        学员统计系统
+
+
+        构造函数：
+            构造对象的函数
+
+        //.test()
+        string.match()
+        string.search()
+        "".replace()
+
+    */
+
+    // var name = '李庚';
+    // var age = 28;
+    // var sex = '男';
+
+    // var name2 = '马智';
+    // var age2 = 48;
+    // var sex2 = '男';
+
+    // var name3 = '杨从坡';
+    // var age3 = 17;
+    // var sex3 = '女';
+
+    function Person(name,age,sex){  //类 构造函数
+        var name = name;
+        var age = age;
+        var sex = sex;
+        var say = function(say){
+            alert(say);
+        }
+        return {name,age,sex,say};
+    }
+
+   var lg = Person('李庚',28,'男');
+   lg.say('呵呵');
+
+   var mz = Person('马智',48,'男');
+   mz.say('我昨天才17...');
+
+    console.log(lg);
+
+
+</script>
+</body>
+</html>
