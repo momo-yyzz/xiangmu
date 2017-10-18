@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+div{
+    width:200px;
+    height: 200px;
+    border: 1px solid #000;
+    display: none;
+}
+div.show{
+    display: block;
+}
+</style>
+</head>
+<body>
+    <button class="active">按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div class="show">1111111</div>
+    <div>22222222222</div>
+    <div>3333333333333</div>
+<script>
+    //面向过程（简单版）
+    var btns = document.getElementsByTagName('button');
+    var con = document.getElementsByTagName('div');
+    for(var i=0;i<btns.length;i++){
+        btns[i].index = i;
+        btns[i].onclick = function(){
+            for(var i=0;i<btns.length;i++){
+                btns[i].className = con[i].className = ''; 
+            }
+            this.className = 'active';
+            con[this.index].className = 'show';
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+#box div,#box2 div{
+    width:200px;
+    height: 200px;
+    border: 1px solid #000;
+    display: none;
+}
+#box div.show,#box2 div.show{
+    display: block;
+}
+</style>
+</head>
+<body>
+   <div id="box">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">1111111</div>
+        <div>22222222222</div>
+        <div>3333333333333</div>
+   </div>
+   <div id="box2">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">1111111</div>
+        <div>22222222222</div>
+        <div>3333333333333</div>
+   </div>
+   <!-- 点击它让第一个停 -->
+   <button id="btn1">按钮一</button>
+   <!-- 点击它让第二个开 -->
+   <button>按钮二</button>
+    <!-- 点击它都关,再点一下都开 -->
+    <button>按钮三</button>
+    <!-- 点击它开的关，关的开 -->
+    <button>按钮四</button>
+    <!-- 倒着轮播 -->
+    <button>按钮五</button>
+
+<script>
+    
+    function tab(id,onOff){
+    	//通过id获取元素
+        var box = document.getElementById(id)
+        var btns =  box.getElementsByTagName('button');
+        var con = box.getElementsByTagName('div');
+        var btn1 = document.getElementById('btn1');
+        var num = 0;
+        box.timer = null;
+        for(var i=0;i<btns.length;i++){
+            btns[i].index = i;
+            btns[i].onclick = function(){
+            	//大清洗
+                for(var i=0;i<btns.length;i++){
+                    btns[i].className = con[i].className = ''; 
+                }
+                //点击哪个显示对应的样式和内容
+                this.className = 'active';
+                con[this.index].className = 'show';
+            }
+        }
+		//点击暂停定时器
+        btn1.onclick = function(){
+            var box = document.getElementById('box');
+            clearInterval(box.timer);
+        }
+		//开启定时器跑起来
+        if(onOff){
+            box.timer = setInterval(function(){
+                num ++;
+                for(var i=0;i<btns.length;i++){
+                    btns[i].className = con[i].className = ''; 
+                }
+                btns[num%=btns.length].className = 'active';
+                con[num%=btns.length].className = 'show';
+            },1000);
+        }
+    }
+
+    tab('box',true);
+    tab('box2');
+    
+
+</script>
+</body>
+</html>

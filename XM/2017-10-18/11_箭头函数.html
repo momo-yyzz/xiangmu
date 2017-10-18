@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+       箭头函数:
+            var fn2 = () => 10;
+
+            var fn2 = (a,b) => a+b;
+
+            var fn2 = (a,b) => {
+                return a+b;
+            };
+
+        this永远（一辈子）跟父级走。
+
+            var fn = function(){}
+    */
+
+    function fn(){
+        return 1;
+    }
+    // console.log(fn());
+    //var fn2 = () => 10;
+
+    // var fn2 = (a,b) => a+b;  箭头后默认return 
+
+    // var fn2 = (a,b) => { //带{} 在里面return
+    //     var c = a + b;
+    //     return a + b + c;
+    // }
+
+    // console.log(fn2(1,2));
+
+    
+    // var arr = [1,2,3,4,5,6];
+
+    // arr.forEach((e,i)=>{
+    //     alert(e);
+    // });
+
+    document.onclick = function(){
+        // function fn(){
+        //     console.log(this);
+        // }
+        // fn();
+        var fn = () => {
+            //console.log(this); //document;
+
+            var fn2 = () => {
+                console.log(this)
+            };
+            fn2();
+        }
+        fn();
+    }
+
+    var s = document;
+    var fn = () => {
+       // console.log(this); //window;
+        var fn2 = () => {
+            console.log(this)
+        };
+        fn2();
+    }
+    fn();
+
+</script>
+</body>
+</html>

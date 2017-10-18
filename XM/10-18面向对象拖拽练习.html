@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		54545445asas4a
+		<div class="box"></div>
+		
+		<script type="text/javascript">
+			//获取
+			function Drag(){
+				this.box = document.getElementsByClassName('box')[0];
+				this.disX = 0;
+				this.disY = 0;
+			}
+			//事件
+			Drag.prototype.init = function(){
+				var _this = this;
+		        this.box.addEventListener('mousedown',down);
+		        function down(ev){
+		            _this.down(ev);
+		        }
+			}
+			//元素按下执行
+			Drag.prototype.down = function(ev){
+		        var _this = this;
+		        this.disX = ev.clientX - this.box.offsetLeft;
+		        this.disY = ev.clientY - this.box.offsetTop;
+		        var move = function(ev){
+		            _this.move(ev);
+		        }
+		        var up = function(ev){
+		            _this.up(ev,move,up);
+		        }
+		        document.addEventListener('mousemove',move);
+		        document.addEventListener('mouseup',up);
+				//阻止默认事件
+		        ev.preventDefault();
+		    }
+			//运动
+		    Drag.prototype.move = function(ev){
+		        this.box.style.left = ev.clientX - this.disX + 'px';
+		        this.box.style.top = ev.clientY - this.disY + 'px';
+		    }
+		    //抬起的时候解绑事件
+		    Drag.prototype.up = function(ev,move,up){
+		        document.removeEventListener('mousemove',move);
+		        document.removeEventListener('mouseup',up);
+		    }
+		
+		    var d = new Drag('box');
+		
+		    d.init();
+		</script>
+	</body>
+</html>

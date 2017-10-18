@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        找原型和原型链
+
+            prototype 原型  函数都有原型还有原型链
+            __proto__ 原型链  对象身上一定有链，除函数意外都没有原型
+
+            function fn(){}
+
+            New Function
+
+
+            对象的原型链  === 构造函数下的原型
+
+                     constructor -> 构造函数 -> prototype
+
+    */
+
+    function Fn(name){
+        this.name = name;
+    }
+    // Fn.prototype.say = function(){
+    //     alert(this.name);
+    // }
+    // Object.prototype.say = function(){
+    //     alert(this.name);
+    // }
+
+    Function.prototype.say = function(){
+        alert('大的FN');
+    }
+
+
+    var f = new Fn('刘雨心');
+    Function.say();//Function.__proto__ -> Function.prototype.say
+    //Object.say(); //Object.__proto__ -> Function.prototype ={}->
+    //Fn.say();
+    // Fn.say();   f.__proto__    Fn.say  Fn.__proto__
+    console.dir(Function);
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

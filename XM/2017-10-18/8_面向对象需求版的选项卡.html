@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+.active{
+    background: yellow;
+}
+#box div,#box2 div{
+    width:200px;
+    height: 200px;
+    border: 1px solid #000;
+    display: none;
+}
+#box div.show,#box2 div.show{
+    display: block;
+}
+</style>
+</head>
+<body>
+        <div id="box">
+                <button class="active">按钮一</button>
+                <button>按钮二</button>
+                <button>按钮三</button>
+                <div class="show">1111111</div>
+                <div>22222222222</div>
+                <div>3333333333333</div>
+           </div>
+           <div id="box2">
+                <button class="active">按钮一</button>
+                <button>按钮二</button>
+                <button>按钮三</button>
+                <div class="show">1111111</div>
+                <div>22222222222</div>
+                <div>3333333333333</div>
+           </div>
+
+    <!-- 点击它让第一个停 -->
+   <button id="btn1">按钮一</button>
+   <!-- 点击它让第二个开 -->
+   <button id="btn2">按钮二</button>
+    <!-- 点击它都关,再点一下都开 -->
+    <button id="btn3">按钮三</button>
+    <!-- 点击它开的关，关的开 -->
+    <button id="btn4">按钮四</button>
+    <!-- 倒着轮播 -->
+    <button id="btn5">按钮五</button>
+<script>
+
+    /*
+        面向过程核心，如果去实现某个功能
+
+        面向对象核心，以谁来做这个功能
+
+        单说实现功能面向过程和面向对象都可以实现
+        往往在实际开发中，代码不只是你来维护，会
+        涉及到团队协作，自己写（想怎么写就怎么写，会越写越乱）
+        团队协作，写出来的东西别人也要方便维护才行（用面向对象会越写越简单、条理清晰）
+        高内聚，低耦合 ---- 而当下组件化开发的目的
+
+
+    */
+    function Tab(id){
+        this.box = document.getElementById(id);
+        this.btns = this.box.getElementsByTagName('button');
+        this.content = this.box.getElementsByTagName('div');
+        this.num = 0;
+        this.timer = null;
+    }
+    Tab.prototype.Event = function(){
+        var _this = this;
+        for(var i=0;i<this.btns.length;i++){
+            this.btns[i].index = i;
+            this.btns[i].onclick = function(){
+                _this.tabs(this.index);
+            }
+        }
+    }
+    Tab.prototype.tabs = function(index){
+       for(var i=0;i<this.btns.length;i++){
+         this.btns[i].className = '';
+         this.content[i].className = '';
+       }
+       this.btns[index].className = 'active';
+       this.content[index].className = 'show';
+    }
+
+    Tab.prototype.toPlay = function(){
+        var _this = this;
+        clearInterval(this.timer);
+        this.timer = setInterval(function(){
+            _this.num ++;
+            _this.tabs(_this.num %= _this.btns.length);
+        },1000);
+    }
+    Tab.prototype.daozhe = function(){
+        var _this = this;
+        clearInterval(this.timer);
+        this.timer = setInterval(function(){
+            _this.num --;
+            _this.num = (_this.num < 0 ? _this.btns.length-1:_this.num);
+            _this.tabs(_this.num);
+        },1000);
+    }
+
+
+    // Tab.prototype.toPlay = function(o){
+    //     var _this = this;
+    //     clearInterval(this.timer);
+    //     var num = o?1:-1;
+    //     this.timer = setInterval(function(){
+
+    //         _this.num += num;
+    //         _this.num = (_this.num < 0 ? _this.btns.length-1:_this.num);
+    //         _this.tabs(_this.num %= _this.btns.length);
+            
+    //     },1000);
+    // }
+    
+    Tab.prototype.stop = function(){
+        clearInterval(this.timer);
+        this.timer = null;
+    }
+
+
+    var t = new Tab('box');
+    var t2 = new Tab('box2');
+    t.toPlay();
+    t.Event();
+    t2.Event();
+
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var onOff = true;
+    btn1.onclick = function(){
+        t.stop();
+    }
+    btn2.onclick = function(){
+        t2.toPlay();
+    }
+    btn3.onclick = function(){
+        if(onOff){
+            t2.stop();
+            t.stop();
+        }else{
+            t.toPlay();
+            t2.toPlay();
+        }
+        onOff = !onOff;
+    }
+
+    btn4.onclick = function(){
+        if(!t.timer){
+            t.toPlay();
+        }else{
+            t.stop();
+        }
+        if(!t2.timer){
+            t2.toPlay();
+        }else{
+            t2.stop();
+        }
+    }
+
+    btn5.onOff = true;
+    btn5.onclick = function(){
+        if(btn5.onOff){
+            t.daozhe();
+            t2.daozhe();
+        }else{
+            t.toPlay();
+            t2.toPlay();
+        }
+        btn5.onOff = !btn5.onOff;
+    }
+
+</script>
+</body>
+</html>
