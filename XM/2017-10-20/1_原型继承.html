@@ -23,18 +23,11 @@
 </style>
 </head>
 <body>
+    sdsadsadjhsjdhsa
     <div id="box"></div>
     <div id="box2"></div>
 <script>
-    /*
-        继承：
-            延续父类的一些特征，自身也有独立的特性。
-    */
-    Object.prototype.say = function(){
-        alert('我一直在');
-    }
     function Drag(id){
-        console.log(this);
         this.box = document.getElementById(id);
         this.disX = 0;
         this.disY = 0;
@@ -47,6 +40,7 @@
             _this.down(ev);
         }
     }
+
     Drag.prototype.down = function(ev){
         var _this = this;
         this.disX = ev.clientX - this.box.offsetLeft;
@@ -64,49 +58,51 @@
     }
 
     Drag.prototype.move = function(ev){
-        var l = ev.clientX - this.disX;
-        var t =  ev.clientY - this.disY;
-        this.box.style.left = l + 'px';
-        this.box.style.top = t + 'px';
+        this.box.style.left = ev.clientX - this.disX + 'px';
+        this.box.style.top = ev.clientY - this.disY + 'px';
     }
     Drag.prototype.up = function(ev,move,up){
         document.removeEventListener('mousemove',move);
         document.removeEventListener('mouseup',up);
     }
 
-    //属性的继承 -- 类式继承（构造继承）
+    //调用父类实现（改变this指向）属性继承。
     function Drag2(id){
-        // console.log(this);
         Drag.call(this,id);
     }
-    
-    //**********拷贝继承 ***********//赋值 与 赋址
-    //Drag2.prototype = Drag.prototype;
-    for(var attr in Drag.prototype){
-        if(Drag.prototype.hasOwnProperty(attr)){ //查看这些属性是不是父类自身的。
-            Drag2.prototype[attr] = Drag.prototype[attr];
-        }
-    }
+
+    // for(var attr in Drag.prototype){
+    //     if(Drag.prototype.hasOwnProperty(attr)){
+    //         Drag2.prototype[attr] = Drag.prototype[attr];
+    //     }
+    // }
+
+    /*
+        p.__proto__ -> Paohui.prototype
+    */
+    function Paohui(){}
+    Paohui.prototype = Drag.prototype;
+    var p = new Paohui;
+    Drag2.prototype = p;
 
     Drag2.prototype.move = function(ev){
         var l = ev.clientX - this.disX;
-        var t =  ev.clientY - this.disY;
-        if(t < 20){
-            t = 0;
-        }else if(t > window.innerHeight - this.box.offsetHeight - 20){
-            t = window.innerHeight - this.box.offsetHeight;
-        }
-        this.box.style.left = l + 'px';
-        this.box.style.top = t + 'px';
+        if(l<0)l=0;
+        this.box.style.left = l  + 'px';
+        this.box.style.top = ev.clientY - this.disY + 'px';
     }
-
-    var d = new Drag('box');
     var d2 = new Drag2('box2');
-    d.init();
     d2.init();
 
-    console.dir(d2);
 
+
+
+
+
+
+    var d = new Drag('box');
+
+    d.init();
 
 
 </script>
