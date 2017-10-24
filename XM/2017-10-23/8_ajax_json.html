@@ -32,6 +32,7 @@
         ajax.onload = function(){
             //通话
             // console.log(ajax.responseText);
+            //转成对象才可以判断
             let json = JSON.parse(ajax.responseText);
             if(!json.code){ //0成功 false !false   true
                 userId.className = 'ok';

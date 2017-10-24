@@ -44,7 +44,10 @@ function ajax(json){
 				} else if(settings.dataType == 'xml'){
 					settings.success(ajax.responseXML);
 				} else if(settings.dataType == 'json'){
-					settings.success(JSON.parse(ajax.responseText));
+					
+					 var d = ajax.responseText;
+					 console.log(d)
+                    settings.success(eval('('+ new Function('','return'+ d)() +')'));
 				}else{
 					settings.success('请核对参数');
 				}
@@ -52,7 +55,7 @@ function ajax(json){
 			}else{
 				//失败
 				
-				settings.success({state:ajax.readyState,status:ajax.status});
+				settings.error({state:ajax.readyState,status:ajax.status});
 				//alert(ajax.status)
 			}
 		}
