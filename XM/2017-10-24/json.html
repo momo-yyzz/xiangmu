@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>json.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <style>
+		.ok{
+		    border: 1px solid green;
+		}
+		.error{
+		    border: 1px solid red;
+		}
+	</style>
+     
+  </head>
+  
+  <body>
+   		 姓名:<input type="text" name="name" id="userId"/>
+  </body>
+  <script src="ajax_1.0.js"></script>
+  <script type="text/javascript">
+  	const userId = document.getElementById('userId');
+  	userId.onblur = function(){
+  		ajax({
+  			url: 'php/ajax.php',
+  			datatype: 'json',
+  			method:'get',
+  			data:{
+  				name: userId.value
+  			},
+  			success: function(data){
+  				console.log(data);
+  			},
+  			error: function(info){
+  				console.log(info);
+  			}
+  		});
+  	};
+  </script>
+</html>

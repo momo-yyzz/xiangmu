@@ -39,14 +39,24 @@
 </div>
 <script src="../ajax(4).js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-
+	//用户名
 	const add_user = document.getElementById('add_user');
+	//密码
 	const add_pass = document.getElementById('add_pass');
+	//注册按钮
 	const add_btn = document.getElementById('add_btn');
 
+	//用户名
+	const login_user = document.getElementById('login_user');
+	//密码
+	const login_pass = document.getElementById('login_pass');
+	//登录按钮
+	const login_btn = document.getElementById('login_btn');
+	
 	//user.php?act=add&user=用户名&pass=密码
+	
+	//注册
 	add_btn.onclick = function(){
-		//注册
 		ajax({
 			url:'user.php',
 			data:{
@@ -63,8 +73,49 @@
 				}else if(data.error === 1){
 					alert('给你弹个漂亮的失败小弹框!');
 				}
-
+				//点击注册后清洗输入框
 				add_user.value = add_pass.value = '';
+				// console.log(data);
+			}
+		})
+	}
+	//失焦
+	add_user.onblur = function(){
+		if(!add_user.value.trim())return;
+		
+		ajax({
+			url:'user_view.php',
+			dataType:'str',
+			success:function(str){
+				if(new RegExp('>'+add_user.value.trim()+'<','g'.test(str))){
+					add_user.style
+				}
+			}
+		})
+	}
+	
+	
+	
+	//登录
+	login_btn.onclick = function(){
+		ajax({
+			url:'user.php',
+			data:{
+				act:'login',
+				user:login_user.value,
+				pass:login_pass.value
+			},
+			success:function(data){
+				if(data.error === 0){
+					alert('登陆成功');
+					setTimeout(function(){
+						window.location.href = 'ajax_error.php';
+					},1000);
+				}else if(data.error === 1){
+					alert('用户名或密码有误');
+				}
+				//点击登录后清洗输入框
+				login_user.value = login_pass.value = '';
 				// console.log(data);
 			}
 		})
