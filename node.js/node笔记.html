@@ -6,6 +6,52 @@
 	</head>
 	<body>
 		<script>
+			
+			npm init -y//初始化
+			
+			//安装依赖
+			npm i -D 
+			npm i -S webpack babel-loader babel-core bobel-preset-react babel-preset-env 			 			babel-pluguin-transform-object-rest-spread
+			
+			webpack
+			babel-plugin-transform-object-rest-spread
+			babel-preset-env
+			babel-preset-react
+			babel-core
+			babel-loader
+			
+			
+			//webpack.config.js
+			const p = require('path');
+			module.exports = {
+				entry:'./src.js';
+				out:{
+					filename:'bba.js',
+					path:p.resolve(__dirname,'dist')
+				}
+			};
+			module:{
+				rules:[
+					{
+						test:/.js$/,
+						use:['babel-loader']
+					}
+				]
+			}
+			
+			//babel.js
+			{
+				"presets":["react"],
+				"plugins":["babel-pluguin-transform-object-rest-spread"]
+			}
+			
+			
+			
+			
+			
+			
+			
+			
 			//接口   入口  ES6  模块化
 			
 			//引入
