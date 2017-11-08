@@ -2,14 +2,26 @@ import React,{Component} from 'react';
 
 export default class extends Component{
 
+    constructor(props){
+        super(props);
+        this.deleteToto = this.deleteToto.bind(this)
+    }
+
+    deleteToto(){
+        let {id, deleteToto} = this.props;
+        deleteToto(id);
+    }
+
     render(){
         let {
             id,
             content,
             isActive,
             todoOnChange,
-            deleteToto
         } = this.props;
+
+        let {deleteToto} = this;
+
         return (
             <li
                 className={isActive ? '' : "completed"}
@@ -26,7 +38,7 @@ export default class extends Component{
                     </label>
                     <button
                         className="destroy"
-                        onClick={ ()=> deleteToto(id) }
+                        onClick={ deleteToto }
                     />
                 </div>
                 <input

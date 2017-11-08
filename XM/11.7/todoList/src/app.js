@@ -104,6 +104,7 @@ class App extends Component{
 
     // 切换显示不同状态的 todo
     changeView(view){
+
         this.setState({
             view
         })
@@ -136,30 +137,28 @@ class App extends Component{
 
         // 所有的长度
         let todosLength = todosData.length;
-
-        let leftCount =todosLength;
+        // 有多少个没有被勾选, 假设全部没有勾选
+        let leftCount = todosLength;
 
         // 过滤什么 todo 会被显示, 切换不同的视图
-        let filteredTodosData = todosData.filter( (elt, indx, arr)=>{
-            let {id, content, isActive} = elt;
+        let filteredTodosData = todosData.filter( (todo)=>{
+            let {id, content, isActive} = todo;
 
-            let shouldStay = false;
-
+            let shouldStay = true;
+            // 如果被勾选, 剩余的就减去一个
             if(!isActive) leftCount--;
 
             switch (view) {
-                case 'active':
+                case "active":
+                    if(!isActive===true){
+                        shouldStay = false;
+                    }
+                    break;
+                case "completed":
                     if(isActive===true){
-                        shouldStay = true;
+                        shouldStay = false;
                     }
                     break;
-                case 'completed':
-                    if(isActive===false){
-                        shouldStay = true;
-                    }
-                    break;
-                default:
-                    shouldStay = true;
             }
 
             return shouldStay;
@@ -178,7 +177,7 @@ class App extends Component{
                     } }
                 />
             );
-        } )
+        } );
 
         return (
             <div>
@@ -215,6 +214,9 @@ class App extends Component{
                             view,
                             leftCount,
                             clearCompleted: clearCompleted,
+                            // 只要有一个被勾选, 就显示: true
+                            // 用所有的 todo 的长度和剩余没有被勾选的 todo 的长度比较
+                            // 只要剩余的长度小于全部 todo 的长度, 就说明有todo被勾选
                             showClearButton: todosLength > leftCount
                         }}
                     />

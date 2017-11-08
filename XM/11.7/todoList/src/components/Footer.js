@@ -19,7 +19,7 @@ export default class extends Component{
                     <li>
                         <a
                             href="#/"
-                            className={ view==='all'? 'selected': '' }
+                            className={ view==='all' ? 'selected': '' }
                             onClick={()=>{
                                 changeView('all')
                             }}
