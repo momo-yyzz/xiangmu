@@ -1,0 +1,39 @@
+*{margin:0;padding:0;font-size:12px;font-family:"Microsoft Yahei";}
+html,body{width:100%;height:100%;background-color:#86b7e2;}
+.adm-top{width:900px;height:36px;margin:0px auto;padding-top:46px;}
+.adm-top .logo2{float:left;}
+.adm-top .back_help{float:right;color:#fff;}
+.adm-top .back_help .hov,.adm-top .back_help .hov{color:#fff;font-size:14px;text-decoration:none;padding:0 8px;line-height:36px;}
+.adm-main{width:900px;height:600px;margin:0px auto;background:#fafafa;border-top:2px solid #ff5926;}
+.adm-main .adm-header{width:900px;height:40px;padding-top:20px;}
+.adm-main .adm-header .phone-a,.adm-main .adm-header .email-a{display:inline-block;width:130px;height:40px;border:1px solid #ddd;margin-left:30px;font-size:16px;color:#333;text-align:center;line-height:40px;text-decoration:none;position:relative;}
+.adm-main .adm-header .change:hover{color:#fff;background-color:#1694f1;}
+.adm-main .adm-header change1:hover{color:#333;background-color:#fafafa;}
+.adm-main .adm-method{border-top:2px solid #eee;}
+.adm-main .adm-header a .line{display:block;position:absolute;left:0;bottom:-5px;width:130px;height:10px;background:#fafafa;display:none;}
+.adm-main .adm-method .adm-left{width:560px;height:300px;padding:40px;border-right:2px solid #eee;position:relative;float:left;}
+.adm-main .adm-method .adm-left .sub_2{position:absolute;background-color:#fafafa;display:none;}
+.adm-main .adm-method .adm-left .sub_2 .pe{position:absolute;top:0px;left:0px;}
+.adm-main .adm-method .adm-left .sub_2 .posi{margin-left:90px;}
+.adm-main .adm-method .adm-left .sub_2 .posi .aa{display:inline-block;font-size:14px;color:#333;}
+.adm-main .adm-method .adm-left .sub_2 .posi .aa i{color:#ff5926;}
+.adm-main .adm-method .adm-left .sub_2 .posi .user_1{width:200px;height:30px;margin-bottom:30px;}
+.adm-main .adm-method .adm-left .sub_2 .posi .btn{width:200px;height:40px;margin-left:78px;margin-top:30px;border-radius:5px;background:#8cd232;color:#fff;line-height:40px;text-align:center;font-size:18px;}
+.adm-main .adm-method .adm-right{width:174px;float:left;padding:40px;}
+.adm-main .adm-method .adm-right .adm-right-txt{font-size:16px;}
+.adm-main .adm-method .adm-right .adm-right-aa{font-size:16px;color:#00f;text-decoration:none;}
+.adm-main .adm-method .adm-right .adm-right-aa:hover{text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

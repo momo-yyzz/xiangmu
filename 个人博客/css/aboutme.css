@@ -1,0 +1,58 @@
+
+
+/*QQ在线客服开始*/
+.qq{
+	width:158px;height:230px;position:fixed;
+	right:10px;top:330px;
+	}
+.qq img{display:block;}
+.qq .qq_ewm{
+	width:158px;height:145px;background-color:#d42763;
+	background-image:url("../images/ewm.jpg");
+	background-repeat:no-repeat;background-size:106px 106px;
+	background-position:center 10px;
+	}
+.qq .qq_a{
+	width:158px;height:35px;background:#d42763;
+	}
+.qq .qq_a a{
+	border-bottom:1px solid #df5685;width:126px;height:24px;display:block;
+	margin:0px auto;color:#fff;font-size:13px;text-align:center;
+	text-decoration:none;background:url("../images/qq.jpg") no-repeat;
+	}
+.qq .qq_bot{
+	width:158px;height:31px;position:relative;
+	}
+.qq .qq_bot .close{
+	width:29px;height:30px;position:absolute;
+	right:0px;top:0px;cursor:pointer;/*让鼠标变成手型*/
+	}
+.qq_small{
+	width:33px;height:180px;position:fixed;cursor:pointer;
+	right:-33px;top:330px;background:url("../images/float-small.png");
+	}
+/*QQ在线客服结束*/
+.admin-main .admin-main-right .right-con .right-con-m #form_ab .con_2{width:555px;margin:0 auto;overflow:hidden;}
+.admin-main .admin-main-right .right-con .right-con-m #form_ab .con_2 li{list-style-type:none;float:left;width:260px;height:260px;background:red;margin-right:30px;margin-bottom:30px;overflow:hidden;border-radius:3px;box-shadow:2px 2px 5px #333;position:relative;} 
+.admin-main .admin-main-right .right-con .right-con-m #form_ab .con_2 li:nth-child(2n){margin-right:5px;}
+.admin-main .admin-main-right .right-con .right-con-m #form_ab .con_2 li a{display:block;width:260px;height:260px;text-align:center;line-height:260px;background:#aaa;border-radius:3px;box-shadow:2px 2px 5px #333;font-size:30px;color:#6d5887;text-decoration:none;}
+.admin-main .admin-main-right .right-con .right-con-m #form_ab .con_2 li .con-detail{display:block;width:240px;height:240px;padding:10px;background:#f0f0f0;transform:translateY(0px) rotate(130deg);transition:transform 500ms linear;position:absolute;}
+.admin-main .admin-main-right .right-con .right-con-m #form_ab .con_2 li .con-detail textarea{width:240px;height:240px;background:#fff;border:none;}
+.admin-main .admin-main-right .right-con .right-con-m #form_ab .con_2 li:hover .con-detail{transform:translateY(-265px) rotate(360deg);}
+
+.admin-main .admin-main-right .right-footer_1{margin-top:10px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;box-shadow:0 2px 2px #333;overflow:hidden;}
+.right-footer_1 .mini-info{display:block;width:100px;height:40px;float:left;margin-left:60px;text-align:center;line-height:40px;text-decoration:none;}
+.right-footer_1 .mini-info .rot{display:block;width:100px;height:40px;font-size:18px;color:#fff;background:rgba(255,255,255,0);transition:all 800ms linear;}
+.right-footer_1 .mini-info:hover .rot{transform:rotate(360deg);background:rgba(255,255,255,.5);}
+.right-footer_1 .mini_1{background:#666;}
+.right-footer_1 .mini_2{background:#0cc;}
+.right-footer_1 .mini_3{background:#c96;}
+.right-footer_1 .mini_4{background:#63c;}
+
+
+
+
+
+
+
+

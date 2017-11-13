@@ -1,0 +1,106 @@
+*{margin:0;padding:0;font-size:12px;font-family:"Microsoft Yahei";}
+html,body{width:100%;height:100%;background-color:#ddd6cc;}
+img{display:block;border:0;}
+.gray{width:100%;height:100%;position:fixed;background:rgba(0,0,0,.5);display:none;z-index:10;}
+.header-wrap{width:100%;height:30px;background:#ddd;border-bottom:1px solid #aaa;}
+.header{width:950px;height:30px;margin:0px auto;}
+.header .logo1{width:100px;height:30px;float:left;}
+.header a.sina{width:123px;height:25px;text-decoration:none;display:block;float:left;margin-left:20px;}
+.header a.sina .txt{width:153px;height:20px;margin:5px auto;float:left;border-radius:3px;}
+.header .login1{width:200px;height:20px;float:right;margin-right:5px;}
+.header .login1 a{display:block;float:left;padding:0 10px;height:30px;line-height:30px;text-decoration:none;font-size:16px;color:#24f;}
+.header .login1 a.hover{background-color:#90a1c4;color:#fff;border-left:1px solid #333;border-right:1px solid #333;}
+.header .login1 a.hov:hover{background-color:#eee;}
+
+
+
+.admin{width:400px;height:300px;background:#fff;position:fixed;top:35%;left:30%;border-radius:5px;box-shadow:2px 2px 8px #ddd;display:none;z-index:20;}
+.admin .admin_top{height:26px;padding-left:10px;background-color:#f6f6fa;line-height:26px;font-size:14px;position:relative;overflow:hidden;}
+.admin .admin_top .close{position:absolute;top:0px;right:10px;cursor:pointer;transition:all 500ms linear;}
+.admin .admin_top .close:hover{transform:rotate(360deg);color:#ff5926;}
+.admin .sub_1{padding:20px;}
+.admin .sub_1 .aa{font-size:16px;line-height:40px;}
+.admin .sub_1 .user_1{width:223px;height:23px;border:1px solid #ddd;}
+.admin .sub_1 a{text-decoration:none;}
+.admin .sub_1 .adm{padding-left:5px;font-size:14px;}
+.admin .sub_1 .adm:hover{color:#ff5926;text-decoration:underline;}
+.admin .sub_1 .memory{display:block;margin-top:10px;margin-left:80px;font-size:14px;color:#5fe;}
+.admin .sub_1 .btn{width:250px;height:50px;margin-left:50px;background-color:#ff5926;border-radius:5px;cursor:pointer;margin-top:20px;border:none;font-size:26px;color:#fff;}
+.line{height:20px;border-bottom:1px dashed #ddd;}
+.admin .sub_1 .about1{line-height:40px;margin-right:10px;text-decoration:underline;}
+.admin .sub_1 .about1:hover{color:#ff5926;}
+
+.about-top{width:880px;height:100px;padding-top:60px;margin:0 auto;padding-left:20px;}
+.about-top h2 .title{font-size:24px;color:#6d5887;padding-bottom:15px;text-decoration:none;}
+.about-top .link_1 .link_2{font-size:14px;color:#6d5887;text-decoration:none;}
+.about-top .link_1 .link_3,.about-top .link_1 .link_4{font-size:14px;margin-left:10px;text-decoration:none;}
+.about-top h2 .title:hover,.about-top .link_1 .link_2:hover{text-decoration:underline;}
+.about-top .link_1 .link_3:hover,.about-top .link_1 .link_4:hover{text-decoration:underline;color:#ffa;}
+
+
+
+.admin-main-wrap{width:100%;overflow:hidden;}
+.admin-main{width:1000px;background:#f00;border-radius:3px;box-shadow:0 0 3px #fff;margin:0px auto;}
+.admin-main .admin-main-left{width:270px;height:1150px;background-color:#e8e5dd;float:left;}
+.admin-main .admin-main-left .blob-master{margin:20px 55px;width:160px;height:160px;border-radius:80px;overflow:hidden;position:relative;cursor:pointer;}
+.admin-main .admin-main-left .blob-master .master-pic{width:160px;height:160px;}
+.admin-main .admin-main-left .blob-master .master-txt{text-decoration:none;width:160px;height:80px;background:rgba(0,0,0,.6);color:#fff;font-size:16px;text-align:center;line-height:80px;position:absolute;bottom:-80px;left:0;transition:bottom .5s linear;}
+.admin-main .admin-main-left .blob-master:hover .master-txt{bottom:0;}
+.admin-main .admin-main-left .theam{width:255px;height:138px;background-color:#f16e50;padding-left:15px;}
+.admin-main .admin-main-left .theam h3{color:#fff;font-size:18px;font-weight:300px;padding-top:40px;margin-bottom:20px;}
+.admin-main .admin-main-left .theam p{color:#fff;font-size:14px;}
+.admin-main .admin-main-left .userinfo{width:230px;height:106px;padding-left:40px;}
+.admin-main .admin-main-left .userinfo .q-fans{line-height:50px;font-size:16px;}
+.admin-main .admin-main-left .userinfo .btns .colf{padding-left:0;}
+.admin-main .admin-main-left .userinfo .col{text-decoration:none;font-size:14px;color:#f16e50;padding:0 10px;border-right:1px solid #aaa;}
+.admin-main .admin-main-left .userinfo .col:hover{color:#333;}
+.admin-main .admin-main-left .new-pic{width:270px;height:170px;}
+.admin-main .admin-main-left .new-pic h3,.admin-main .admin-main-left .all-pic h3{width:270px;height:30px;background-color:#f16e50;font-size:16px;color:#fff;text-indent:30px;line-height:30px;}
+.admin-main .admin-main-left .new-pic .pic-later{width:208px;height:104px;padding-top:18px;padding-left:31px;}
+.admin-main .admin-main-left .new-pic .pic-later li{width:50px;height:50px;list-style-type:none;float:left;border:1px solid #fff;}
+.admin-main .admin-main-left .new-pic .pic-later li:hover{opacity:.8;}
+.admin-main .admin-main-left .all-pic{width:270px;height:92px;}
+.admin-main .admin-main-left .all-pic .all-btns{padding-top:30px;padding-left:30px;}
+.admin-main .admin-main-left .all-pic .all-btns .bg-col{text-decoration:none;padding:3px 5px;border-radius:3px;color:#333;font-size:14px;}
+.admin-main .admin-main-left .all-pic .all-btns .bg-col:hover{color:#fff;background-color:#f16e50;}
+
+.admin-main .admin-main-right{width:730px;height:1150px;background-color:#fff;float:left;}
+.admin-main .admin-main-right .right-banner{padding-left:50px;width:680px;height:43px;background-color:#eee;overflow:hidden;}
+.admin-main .admin-main-right .right-banner ul li{list-style-type:none;float:left;padding:0 20px;line-height:41px;border:1px solid #eee;}
+.admin-main .admin-main-right .right-banner ul li a{text-decoration:none;font-size:16px;}
+.admin-main .admin-main-right .right-banner ul li:hover{background-color:#f16e50;}
+.admin-main .admin-main-right .right-banner ul li:hover a{color:#fff;}
+.admin-main .admin-main-right .right-banner ul li.hov-2{background-color:#f16e50;}
+.admin-main .admin-main-right .right-banner ul li.hov-2 a{color:#fff;}
+
+.admin-main .admin-main-right .right-con{width:730px;}
+.admin-main .admin-main-right .right-con .right-con-title{width:700px;height:35px;padding-top:40px;padding-bottom:10px;padding-left:30px;position:relative;border-bottom:1px solid #ddd;}
+.admin-main .admin-main-right .right-con .right-con-title .menu{float:left;margin-right:10px;}
+.admin-main .admin-main-right .right-con .right-con-title em{font-size:18px;font-weight:500;color:#333;line-height:35px;position:absolute;top:40px;left:70px;cursor:pointer;transition:left 1s linear;}
+.admin-main .admin-main-right .right-con .right-con-title em:hover{left:100px;}
+.admin-main .admin-main-right .right-con .right-con-m{padding:30px;}
+.admin-main .admin-main-right .right-con .right-con-m .right-con-main{font-size:16px;color:#666;font-weight:normal;text-indent:20px;line-height:25px;margin-bottom:10px;}
+.admin-main .admin-main-right .right-con .right-con-m .right-con-pic{margin:20px auto;}
+
+.admin-main .admin-main-right .right-footer{margin-top:10px;padding-left:600px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;box-shadow:0 2px 2px #333;}
+.admin-main .admin-main-right .right-footer .pinglun{font-size:14px;margin-right:10px;line-height:60px;text-decoration:none;}
+.admin-main .admin-main-right .right-footer .pinglun:hover{color:#333;}
+
+.admin-footer{width:100%;height:373px;border-top:9px solid #f16e50;margin-top:15px;background:#242221;}
+.admin-footer .footer-info{width:550px;height:68px;margin:0 auto;padding-left:170px;padding-top:10px;padding-bottom:50px;border-bottom:2px solid #333;position:relative;}
+.admin-footer .footer-info .img-ab{position:absolute;top:-58px;left:20px;width:120px;height:120px;border:5px solid #f16e50;}
+.admin-footer .footer-info .h-title{font-size:18px;line-height:28px;color:#f16e50;cursor:pointer;}
+.admin-footer .footer-info .p-info {font-size:14px;color:#aaa;line-height:25px;}
+
+.admin-footer .footer-visiter{width:800px;height:164px;margin:0 auto;padding-top:40px;}
+.admin-footer .footer-visiter h3{color:#fff;font-size:16px;line-height:40px;}
+.admin-footer .footer-visiter ul li{list-style-type:none;float:left;width:82px;height:82px;border:1px solid #fff;margin-right:10px;}
+.admin-footer .footer-visiter ul li img{width:82px;height:82px;}
+.admin-footer .footer-visiter ul li:hover{opacity:.7;}
+.admin-footer .copyright{width:800px;color:#aaa;margin:0 auto;text-align:center;}
+.admin-footer .copyright a{text-decoration:none;font-size:12px;color:#f16e50;line-height:20px;padding:0 10px;}
+
+
+
+
+

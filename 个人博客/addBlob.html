@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>博文发表</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+  <link rel="stylesheet" type="text/css" href="css/addBlob.css"/>
+ </head>
+ <body>
+    <div class="about-top">
+        <h2><a class="title" href="#">陌路的博客</a></h2>
+		<span class="link_1"><a class="link_2" href="http://blog.sina.com.cn/">http://blog.sina.com.cn/</a><a href="#" class="link_3">[订阅]</a><a href="#" class="link_4">[手机订阅]</a></span>
+   </div>
+	<div class="add-con-wrap">
+		<div class="add-con">
+			<div class="add-con-top">
+				<span class="add-con-top-txt">写博文</span>
+				<a href="txtlist.html" class="add-con-top-back">返回博文列表</a>
+			</div>
+			<form action="addBlob.do" method="post" class="add-con-main" name="form4">
+				<div class="main-but">
+					<input type="text" class="wbt" id="b_title" name="b_title" placeholder="请在这里输入博文标题"/>	
+					<textarea id="b_con" name="b_con" class="txw"></textarea>
+				</div>
+				<div class="footer-but">
+					<input class="sub-blob" type="submit" value="发表"/><a class="res-blob"   href="javascript:location.history.href='txtlist.html'"/>取消</a>
+				</div>
+			</form>
+		</div>
+	</div>
+ </body>
+</html>

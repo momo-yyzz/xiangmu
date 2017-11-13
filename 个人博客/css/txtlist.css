@@ -1,0 +1,10 @@
+.admin-main .admin-main-right .right-con .right-con-head{width:710px;padding-left:20px;font-size:14px;color:#333;line-height:26px;background:#dedede;}
+.admin-main .admin-main-right .right-con .right-con-add{text-decoration:none;padding:10px 20px;background:#dedede;line-height:60px;text-align:center;font-size:30px;background-color:#f16e50;}
+.admin-main .admin-main-right .right-con .right-con-add .T-txt{font-size:20px;padding-right:5px;}
+.admin-main .admin-main-right .right-con ul{padding:50px;padding-top:30px;}
+.admin-main .admin-main-right .right-con ul li{list-style-type:none;height:50px;line-height:50px;position:relative;border-bottom:2px dotted #ccc;}
+.admin-main .admin-main-right .right-con ul li .menu{float:left;margin-right:10px;}
+.admin-main .admin-main-right .right-con ul li em{font-size:18px;font-weight:500;color:#333;line-height:35px;position:absolute;top:0px;left:50px;cursor:pointer;transition:left .51s linear;}
+.admin-main .admin-main-right .right-con ul li em:hover{left:80px;}
+.admin-main .admin-main-right .right-con ul li span{font-size:14px;color:#aaa;margin-left:450px;}
+.admin-main .admin-main-right .right-con ul li a.del{float:right;font-size:14px;}
