@@ -2,13 +2,15 @@ function Tab(that){//第二步，创建一个类
     this.that = that;
     this.opts = {
         btns:['体育','新闻','娱乐','游戏'],
-        contents:['100米飞跃','刚才撞车内个','林志玲和前男友不得不说的秘密','中国又夺冠了']
+        contents:['100米飞跃','刚才撞车内个','林志玲和前男友不得不说的秘密','中国又夺冠了'],
+        ani:false
     }
 }
 
 //写方法
 $.extend(Tab.prototype,{
     init:function(opt){
+        $.extend(this.opts,opt);
         this.createBtns();
         this.createDivs();
         this.changeBtn();
@@ -26,14 +28,16 @@ $.extend(Tab.prototype,{
     changeBtn:function(){
         var btn = this.that.find('button');
         var div = this.that.find('div');
+        var speed = this.opts.ani?800:0;
+
         btn.on('click',function(){
             $(this).addClass('active').siblings('button').removeClass('active');
-           div.eq($(this).index('button')).addClass('show').siblings('div').removeClass('show');
+           //div.eq($(this).index('button')).addClass('show').siblings('div').removeClass('show');
+           div.eq($(this).index('button')).show(speed).siblings('div').hide(speed);
         });
     }
 
 });
-
 
 
 //第一步定义一个tabs
