@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#app div{
+				width: 148px;
+				height: 100px;
+				background: yellow;
+				display: none;
+			}
+			#app .show{
+				display: block;
+			}
+			#app .blue{
+				background: deepskyblue;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <button>按钮1</button>
+			<button>按钮2</button>
+			<button>按钮3</button>
+			<div>按钮1</div>
+			<div>按钮2</div>
+			<div>按钮3</div> -->
+
+			<button 
+				@click='changeIndex(i)' 
+				v-for="item,i in list"
+				:class="{blue: i === showIndex}"
+			>
+				{{item}}
+			</button>
+			<div :class="{show: i === showIndex}" class="abc"  v-for="item,i in list">{{item}}</div>
+		</div>
+		
+		<script src="vue.js"></script>
+		<script type="text/javascript">
+			var arr = ['按钮1','按钮2','按钮3'];
+			
+			new Vue({
+				el:'#app',
+				data:{
+					list:arr,
+					showIndex:0  //用来确定哪一个是显示的
+				},
+				methods:{		//事件函数
+					changeIndex(index){
+						this.showIndex=index;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

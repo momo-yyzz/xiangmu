@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<ul id="list">
+			<!--<li>111</li>
+			<li>222</li>-->
+		</ul>
+		<button id="add">添加</button>
+		<button id="remove">删除</button>
+	</head>
+	<body>
+		<script src="vue.js"></script>
+		<script type="text/javascript">
+			
+			/**********************响应的数据绑定*********************/
+			/*let arr = ['111','222'];
+			
+			// 根据数据生成li 把数据填充到模板中
+			let Arr = arr.map(function(item){
+				return `<li>${item}</li>`
+			})
+			console.log(Arr.join(''))
+			
+			let list = document.getElementById('list');
+			
+			list.innerHTML = Arr.join('');*/
+			
+			
+			let arr = ['111','222','333','444'];
+			// 根据数据生成li 把数据填充到模板中
+			function render(d){
+				let newArr = arr.map(function (item){
+					return `<li>${item}</li>`	
+				})	
+				list.innerHTML = newArr.join('');
+			}
+
+			let list = document.getElementById("list");
+
+			render(arr);// 初始化
+
+			let add = document.getElementById('add');
+
+			// 和用户交互会产生数据
+
+			add.onclick = function (){  //添加点击
+				// 添加内容
+				arr.push('111');
+				// 重新渲染页面
+				render(arr);
+			}
+			let remove = document.getElementById('remove');
+
+			remove.onclick = function (){ //删除点击
+				arr.pop();
+				// 再重新渲染页面
+				render(arr);
+			}
+			// 当每一次数据发生变化，页面就会自动更新，用到了响应的数据绑定
+		</script>
+	</body>
+</html>

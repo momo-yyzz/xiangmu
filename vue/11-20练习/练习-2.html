@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--**********************vue响应的数据绑定1*********************-->
+		<!--<div id="app">
+			{{ message }}
+			message
+		</div>
+		<script src="../vue.js"></script>
+		<script>
+			
+			let arr = ['111','222'];
+			
+			// 启动应用
+			new Vue({
+				el:'#app', // document.getELementById('list')  // element  模板位置
+				data: {  // 要呈现的数据
+					arr:arr,
+					message: 'hello'
+				}
+			});
+		
+			// 写任意表达式 表达式可以求出值
+		
+			let a = 'miaov';
+		
+			let str = `<div>${a}${1+1}${[1,2,3].map((item) => item*3)}</div>`;
+		
+			console.log(str);
+		</script>-->
+			
+		<!--**********************vue响应的数据绑定2*********************-->
+		<!--<div id="app">
+			{{ message }}
+			{{ arr }}
+			{{ 1+1 }}
+			{{ [1,2].map((item) => item*3) }}
+			{{ true ? 'hello' : '错误' }}
+		</div>
+		<script src="../vue.js"></script>
+		<script>
+			
+			
+			// 在模板中渲染数据 {{任意表达式}}
+			let arr = ['miaov','ketang'];
+
+			// 启动应用
+			// 选项对象
+			new Vue({
+				el:'#app', // document.getELementById('list')  // element  模板位置
+				data: {  // 要呈现的数据
+					arr:arr,
+					message: 'hello'
+				}
+			});
+		</script>-->
+	
+		<!--**********************vue响应的数据绑定2*********************-->
+		<div id="app">
+			{{ message }}
+		</div>
+		<script src="../vue.js"></script>
+		<script>
+			
+			let vm = new Vue({
+				el:'#app',
+				data: {  
+					message: '111'
+				}
+			});
+
+			console.log(vm);
+
+			document.onclick = function (){
+				vm.message = '222'	
+			}
+
+
+		</script>
+	</body>
+</html>
