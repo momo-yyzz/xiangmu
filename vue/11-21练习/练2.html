@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<ul id="app">
+			<input v-model="message" @keyup.13="tab" type="text" />
+			<li v-for="item,index in arr">{{item}}</li>
+			<button@click="tab2">删除</button>
+		</ul>
+		
+		<script src="../vue.js"></script>
+		
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					message:'',
+					arr:[]
+				},
+				methods: {
+					tab(ev){
+						this.arr.push(this.message)
+						this.message = ''	
+					},
+					tab2(index){
+						this.arr.splice(index,1)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

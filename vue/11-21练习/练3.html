@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="app">
+			姓名：<input v-model="message" type="text" />
+			年龄：<input v-model="message2" type="text" />
+			<button @click="tab">添加</button>
+			<ul>
+				<li v-for="item,index in users">
+					姓名：{{item.name}}
+					年龄：{{item.age}}
+				</li>
+			</ul>
+			<p>统计：以上人的总年龄为{{ppp}}岁</p>
+			<p>以上人的总年龄为{{ppp}}岁</p>
+		</div>
+		
+		<script src="../vue.js"></script>
+		
+		<script type="text/javascript">
+			
+			let data = [
+				{
+					name:'ss',
+					age:74
+				},
+				{
+					name:'ss',
+					age:74
+				},
+				{
+					name:'ss',
+					age:74
+				},
+				{
+					name:'ss',
+					age:74
+				},
+				{
+					name:'ss',
+					age:74
+				}
+			]
+			
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					users:data,  //数组
+					message:'',
+					message2:''
+				},
+				methods: {
+					tab(){
+						this.users.push({    //数组最后添加
+							name:this.message,
+							age:this.message2
+						})
+						//清洗输入框
+						this.message = this.message2 = ''
+						//console.log(data)
+					}
+				},
+				computed: {  //计算属性
+					ppp(){
+						let m = this.users.reduce(function(n,item){
+							return n + parseFloat(item.age)
+						},0)
+						return m
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>

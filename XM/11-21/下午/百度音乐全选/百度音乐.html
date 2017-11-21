@@ -26,7 +26,7 @@
 			}
 		</style>
 		<link rel="stylesheet" type="text/css" href="css/baidu.css" />
-		<script src="../../vue.js"></script>
+		<script src="../src/vue.js"></script>
 	</head>
 
 	<body>
@@ -35,7 +35,7 @@
 				<ul class="list list-head">
 					<li>
 						<div>
-							<input type="checkbox" v-model="checkedAll" />全选
+							<input type="checkbox" v-model='isAllChecked'/>全选
 						</div>
 						<span>歌单</span>
 						<span>歌手</span>
@@ -43,7 +43,15 @@
 					</li>
 				</ul>
 				<ul class="list list-body">
-					<li class="">
+					<li v-for="item in users"
+						:class="{checkedColor:clone===item.checked}"
+					>
+						<div><input type="checkbox" v-model="item.checked"></div>
+						<span>{{item.song}}</span>
+						<span>{{item.name}}</span>
+						<span>{{item.album}}</span>
+					</li>
+					<!--<li class="">
 						<div><input type="checkbox"></div>
 						<span>泡沫</span>
 						<span>邓紫棋</span>
@@ -54,13 +62,7 @@
 						<span>泡沫</span>
 						<span>邓紫棋</span>
 						<span>10</span>
-					</li>
-					<li class="">
-						<div><input type="checkbox"></div>
-						<span>泡沫</span>
-						<span>邓紫棋</span>
-						<span>10</span>
-					</li>
+					</li>-->
 				</ul>
 				<div class="select">
 					<span class="selectAll">
@@ -68,8 +70,8 @@
 						<span>统计：</span>
 					</span>
 					<div class="others">
-						<span><em></em>歌手有：3位</span>
-						<span><em></em>专辑有5张</span>
+						<span ><em></em>歌手有：3位</span>
+						<span><em></em>专辑有{{ppp}}张</span>
 					</div>
 				</div>
 			</div>
@@ -81,24 +83,57 @@
 					name: '邓紫棋',
 					song: '泡沫',
 					checked: false,
-					album: 10
+					album: 15
 				},
 				{
 					id:Date.now()+Math.random(),
 					name: '王杰',
 					song: '泡沫',
 					checked: false,
-					album: 10
+					album: 22
 				},
 				{
 					id:Date.now()+Math.random(),
 					name: '邓紫棋',
 					song: '泡沫',
 					checked: false,
-					album: 10
+					album: 44
 				}
 			]
+			
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					users: data,
+					clone:true
+				},
+				computed: {
+					isAllChecked:{
+						get(){  // 取值的时候触发
+							let newArr = this.users.filter(function (item){
+								return item.checked
+							})
 
+							return newArr.length === this.users.length;
+						},
+						//设置值作为参数传过来
+						set(newValue){ // 设置值触发
+							console.log(newValue);  //点击改变了状态
+							this.users.forEach(function (item){
+								item.checked = newValue;
+							})
+						}
+					},
+					ppp(){  //专辑总计
+						let m = this.users.reduce(function(n,item){
+							return n + parseFloat(item.album)
+						},0)
+						return m
+					}
+				}
+			})
+
+		
 		</script>
 	</body>
 
