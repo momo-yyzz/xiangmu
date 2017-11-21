@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<script src="../vue.js"></script>-->
+		
+		<script type="text/javascript">
+			
+			let arr =[
+				{
+					age:55,
+					name:'sha',
+					weight:"55kg"
+				},
+				{
+					age:22,
+					name:'sha',
+					weight:"55kg"
+				},
+				{
+					age:11,
+					name:'sha',
+					weight:"55kg"
+				},
+				{
+					age:33,
+					name:'sha',
+					weight:"55kg"
+				},
+				{
+					age:77,
+					name:'sha',
+					weight:"55kg"
+				},
+				{
+					age:50,
+					name:'sha',
+					weight:"55kg"
+				}
+			]
+			
+			let n = 0;
+			let w = 0;
+			arr.forEach(function(a){
+				
+				n += a.age;
+				w += parseFloat(a.weight);
+				
+			})
+			console.log(n,w)
+			
+			let ppp = arr.reduce(function(a1,a2){
+				console.log(a1,a2)
+				return{
+					age:a1.age + a2.age,
+					weight:parseFloat(a1.weight)+parseFloat(a2.weight)
+				}
+			},{age:100,weight:100})
+			console.log(ppp)
+			
+		</script>
+	</body>
+</html>
