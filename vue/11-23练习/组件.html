@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<aa-bb :title="news" :list="List"></aa-bb>
+			<aa-bb :title="yus" :list="List2"></aa-bb>
+		</div>
+		
+		<script src="../vue.js"></script>
+		
+		<script type="text/javascript">
+			
+			/*Vue.component('pp-pp',{
+				template:`<div>000</div>`
+			})*/
+			Vue.component('aa-bb',{
+				props:['title','list'],
+				template:`<div>
+							<h1>{{title}}</h1>
+							<ul>
+								<li
+									v-for="item in list"
+								>
+								{{item}}
+								</li>
+							</ul>
+						</div>`
+			})
+			
+			let news = '新闻';
+			let List = ['1','2','3'];
+			let yus = '娱乐';
+			let List2 = ['1','2','3'];
+			
+			new Vue({
+				el:"#app",
+				data:{
+					news,
+					List,
+					yus,
+					List2
+				}
+			})
+		</script>
+	</body>
+</html>
