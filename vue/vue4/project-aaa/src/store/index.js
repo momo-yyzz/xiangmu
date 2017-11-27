@@ -16,14 +16,14 @@ let store = new Vuex.Store({
       }
   },
   actions: {
-      changeAction(store,paylod){
-          //写关于改变状态n的异步操作
-          setTimeout(() =>{
-              let o = {
-                k: paylod.k +1000
-              }
-              store.commit('changeN', o)
-          },1000);
+      gitDataAction(store){
+          Axios.get('http://172.20.10.5:8080/info')
+          .then(function (params){
+              console.log(params.data.data)
+              store.commit('changeList',{
+                  list:params.data.data
+              })
+          })
       }
   }
 })

@@ -1,33 +1,30 @@
 <template>
   <div id="app">
-    {{num}}
+    <button @click="getDataMethod">请求数据</button>
+    <ul>
+      <li v-for="item in list">
+        <p>id:{{item.id}}</p>
+        <p>标题为:{{item.title}}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        num: this.$store.state.n //定义的key值的初始值是从vuex中拿到的
-      }
-    },
-    methods: {
-      changeStateValue () {
-
-        //this.num = 10000;只是改变了本组件的data中的值
-        //this.$store.state.n = 10000;
-
-        /* this.$store.commit('changeN',{
-          k: ++this.val
-        }) */
-
-        //派发一个action
-        this.$store.dispatch('changeNAction',{
-          k: ++this.val
-        })
-      }
+// 组件中要用到vuex中的state中的值
+import Hello from './components/HelloWorld'
+export default {
+  computed: {
+    list () {
+      return this.$store.state.list
+    }
+  },
+  methods: {
+    getDataMethod () {
+      this.$store.dispatch('getDataAction')
     }
   }
+}
 </script>
 
 <style>

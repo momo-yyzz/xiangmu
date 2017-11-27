@@ -2,7 +2,7 @@ vue-cli
 
 工具：npm i vue-cli -g
 
-命令行中 vue -v
+命令行中 vue -vue
 出现版本号安装成功
 
 vue init webpack project(项目名称)
