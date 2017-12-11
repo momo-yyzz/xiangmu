@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// 标识符：函数名，变量名，统称为标识符
+			// 作用域：标识符可访问的范围、标识起作用的范围
+			/*
+				全局范围
+				局部（函数）范围
+					能够划分作用域就是函数
+			*/
+
+			let  a = 10; 
+
+			// 开始执行函数，函数会创建一个执行环境，在这个环境中默认的或创建一个对象，称之为变量对象，对象初始有argument、this，scope
+
+			// 开始执行之前，会把这个作用域下的用var声明的变量名和function声明的函数放在这个变量对象中
+			/*
+				执行函数：
+					准备阶段 变量提升
+						创建变量对象，会把这个作用域下的用var声明的变量名和function声明的函数放在这个变量对象中
+					执行代码
+						变量对象（VO）变成了活动对象（AO）
+			*/
+
+			// 开始执行代码
+
+			function fn(){
+
+				console.log(b);  // 变量提升
+
+				var b = 10;	
+
+				console.log(b);
+
+				console.log(a);
+
+				function fn2(){
+					console.log(a);	
+					console.dir(fn2);
+				}
+
+				fn2()
+
+				
+			}
+
+			fn()
+
+			console.dir(fn);
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>
