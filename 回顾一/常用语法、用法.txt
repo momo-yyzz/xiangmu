@@ -1,0 +1,310 @@
+PS小知识：
+	1）如果图片本身为索引模式，在图像->模式->去改变模式即可
+	RGB颜色为常用模式    CMYK颜色 一般用于打印时的模式
+	   
+	2）如果想解锁图层，直接双击该图层即可
+	
+	3）如果想拉出参考线，在标尺上直接按住鼠标左键往下拉或者往右拉即可
+	
+	如果想删除参考线，按住参考线直接往上或者下，往左或者右仍出去即可。
+	  
+	4）用矩形选框把要切的图片选出来，如果要变换选区的大小，右键变换选区或者alt+s+t即可
+
+	选择好之后，ctrl+c，ctrl+n,+ctrl+v,然后直接保存出来即可。
+
+前端规范
+	1、所有书写均在英文半角状态下的小写；
+	2、id，class必须以字母开头；
+	3、所有标签必须闭合；
+	4、html标签用tab键缩进；
+	5、属性值必须带引号；
+	6、<!-- html注释 -->
+	7、/* css注释 */
+	8、ul,li/ol,li/dl,dt,dd拥有父子级关系的标签；
+	9、p,dt,h标签  里面不能嵌套块属性标签；
+	10、a标签不能嵌套a；
+	11、内联标签不能嵌套块标签；
+
+
+重置样式
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+		margin:0;
+		padding:0;
+		}
+	body{
+		font-size:12px;
+		font-family:"微软雅黑";
+		}
+	ul,li{
+		list-style:none;
+		}
+	a{
+		text-decoration:none;
+		}
+	img{
+		border:0;
+		}
+
+引用外部样式
+    *方法一
+    <link rel="stylesheet" type="text/css" href="目标文件的路径及文件名全称" />  
+    说明：使用link元素导入外部样式表时，需将该元素写在文档头部，即<head>与</head>之间。
+	*方法二
+    <style type="text/css">   
+    @import url(目标文件的路径及文件名全称);
+    </style> 
+    注：@和import之间没有空格 url和小括号之间也没有空格；必须结尾以分号结束；
+		
+border
+	边框border合写：
+		border:5px solid red;
+	边框border的四个方向的写法：
+		border-top:5px solid red;
+		border-right:5px solid red;
+		border-bottom:5px solid red;
+		border-left:5px solid red;
+	border属性值分开来写分别是：
+		border-width:5px;
+		border-style:solid;
+		border-color:green;
+	改变边框任何方向的颜色或者宽度
+		border:5px solid red;
+		border-right-color:green;
+		border-bottom-width:10px;
+	改变某一个方向的边框线性
+		border:5px dotted red;
+		border-bottom-style:solid;
+	边框的线性：
+		solid(实线)  dashed(虚线) dotted(点状线)    double(双线)   none(没有)
+		
+背景不平铺
+	background-repeat:repeat;
+背景固定
+	语法：
+	选择符{background-attachment:scroll(滚动)/fixed(固定);}
+	
+溢出隐藏
+	overflow:hidden
+	
+透明：opacity:0.5;
+	filter:alpha(opacity=50);
+	兼容其他浏览器写法：
+	opacity:.value;(value的取值范围0-1,0.1,0.2,0.3-----0.9)
+	
+	IE8以下浏览器写法：
+	filter:alpha(opacity=value);取值范围 0-100
+	
+	CSS3属性
+	background:rgba(100,100,100,0.5);   
+	红，绿，蓝，透明
+
+
+断到下一行(br标签)
+	<br/>
+	
+空格&nbsp
+
+文字水平对齐
+	text-align:center	
+文本加粗
+	font-weight:bold/bloder
+文本倾斜
+	font-style:oblique
+首行缩进
+	text-indent:10px;	
+行高测量：
+	    1）确认字体大小
+	    2）从一行文字的最顶端量到第二行文字的最顶端
+	    3）得出的值即为行高
+	字体大小是可以继承的
+	给父级或者祖先元素设置字体大小，那么子孙元素会继承
+
+超链接
+	语法：
+	
+	<a   href="目标文件路径及全称/连接地址">链接文本/图片</a>
+	
+	<a href="#"></a>空链接
+	
+	属性：target:页面打开方式，默认属性值_self。
+	
+	属性值：_blank 新窗口打开
+	
+	<a href="#" target="_blank">新窗口打开</a>
+	
+<a>标签
+	a{
+		text-decoration:none;
+	}
+	text-decoration:none/underline/overline/line-through/blink.(高版本浏览器不支持blink属性)
+	
+	说明：
+	none:没有修饰
+	underline:添加下划线
+	overline:添加上划线
+	line-through:添加删除线
+	blink：闪烁
+	
+强制不换行：
+	white-space:normal(正常)/nowrap(不换行)
+	
+标准盒模型组成
+	中心conten(内容)-padding(填充层)-border(边框)-margin(边界/边距)
+
+盒子实际大小
+	宽 =左右border+左右padding+左右margin+width
+
+	高 =上下border+上下padding+上下margin+height
+			
+	切记：计算高度或者宽度时，不要忘了左右border，padding和margin
+	
+H5常规标签
+	<header>我是头部</header>
+    <nav>导航标签</nav>
+    <footer>尾部标签</footer>
+    <section>页面上某一板块</section>
+    <article> 用来在页面中表示一套结构完整且独立的内容部分</article>
+    <aside>元素标签可以包含与当前页面或主要内容相关的引用、侧边栏、广告、nav元素组，以及其他类似的有别与主要内容的部分</aside>
+    <time>18:00</time>
+    <div>今天是3月6号<time datetime="2017-03-06"></time>今天</div>
+
+文本标签（h1-h6）
+     <h1>一级标题</h1>(header1~header6	)
+     <h2>二级标题</h2>...
+     <h6>六级标题</h6>
+     
+段落标签
+	段落(p)(paragraph)
+	<p>段落文本内容</p>
+	标识一个段落(段落与段落之间有段间距)
+	
+加粗标签
+	加粗
+	<b>加粗内容</b>
+	<strong>加粗内容</strong>
+
+倾斜标签
+	<em></em>(emphasized)
+	<i></i>(italic)
+	
+水平线
+	<hr /> 空标记(horizontal   rule)
+	
+上标文本
+	<sup></sup>
+	
+下标文本
+	<sub></sub>
+	
+删除线标签
+	<del></del>
+	
+大于号/小于号
+	&gt；大于     &lt;小于
+
+版权
+	&copy; （圈C）
+	
+伪类选择器
+	语法 ：
+
+	a:link{属性：属性值;}超链接的初始状态;
+	
+	a:visited{属性：属性值;}超链接被访问后的状态;
+	
+	a:hover{属性：属性值;}鼠标划过超链接时的状态;
+	
+	a:active{属性：属性值;}即鼠标按下时超链接的状态;
+
+常用的块状元素
+	div,dl,dt,dd,ol,ul,fieldset,(h1-h6),p,form,hr,colgroup,col,table,tr,td,等
+	
+常见的内联元素
+	a,span,i,em,strong,b,del等
+	
+图片撑大盒子3px解决办法
+	1.当父亲没有设置高度时，图片会把外边的盒子撑大3px，解决办法将img转换成块元素
+	2.vertical-align可以解决撑开3px问题
+	
+元素隐藏
+	display:none
+	
+文字图片元素放置在父元素的中部
+	vertical-align:middle
+	
+cursor(光标属性)	
+	属性：cursor
+	
+	属性值：
+	pointer(手形)	
+	move(移动)		
+	text(文本)    
+	wait(等待状态)
+	help(帮助)        
+	crosshair(十字架)
+	
+	se-resize(向下及向右)                     sw-resize(向下及向左)
+	      
+	s-resize（向下移动）                      w-resize（向左移动）
+	
+	e-resize(左右方向)             
+	ne-resize（向右及向上移动）
+	    
+	nw-resize(向上及向左移动)	    
+	n-resize(向上移动)
+	
+vertical-align 垂直居中
+	top（顶端）  元素的顶端与行中最高元素的顶端对齐
+
+	middle（中间）  元素放置在父元素的中部。
+
+	bottom（底部）    元素的顶端与行中最低的元素的顶端对齐。
+	
+什么是高度塌陷
+	浮动元素父元素高度自适应（父元素不写高度时，子元素写了浮动后，父元素会发生高度塌陷）
+
+万能清除法：
+   	选择符:after{
+		content:".";
+		clear:both;
+        display:block;
+        height:0;
+        overflow:hidden;
+        visibility:hidden;}
+
+form   表单
+	<input type="…… " name="" value="" /> 
+	text         文本框
+	password     密码
+	radio        单选 （要想实现单选，须name属性值相同）
+	checkbox     复选
+	submit       提交
+	reset        重置
+	button       按钮
+	image        图片
+	file         上传
+	hidden       隐藏
+	
+选中禁选	
+	checked  在页面加载时默认选定的 input 元素。
+		<input type="checkbox" name=""  checked/>
+		 或者checked=”checked”
+	
+	disabled  属性规定应该禁用 input 元素。
+		<input type="checkbox" name=""  disabled/>
+		或者disabled=”disabled”
+
+select/option 下拉选框
+	对高度的支持不兼容；
+	
+textarea   文本域(多行文本框)      
+	rows:规定文本区内的可见行数。
+	cols:规定文本区内的可见宽度(以平均字符数计);
+	各个浏览器下的默认滚动条显示不兼容
+	
+去掉下拉框三角：
+    select{
+		appearance:none;
+		-webkit-appearance:none;
+		-moz-appearance:none;
+	}

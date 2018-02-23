@@ -1,0 +1,831 @@
+HBuildr快捷键
+	新建(ctrl+n)，打开(ctrl+o)， 保存(ctrl+s)，
+	另存为（ctrl+shift+s），首选参数（ctrl+u）
+	隐藏显示所有面板（F4），复制（ctrl+c）
+	粘贴（ctrl+v），剪切（ctrl+x），全选（ctrl+a）
+	预览页面 （F12快捷键）
+
+
+前端开发环境
+	PS(photoshop)切图、修图、测量
+	
+编辑器
+	DW(Dreamweaver)、HBuilder、Sublime、Webstorm
+	
+浏览器(二类)
+	IE浏览器：IE6-IE11
+	标准浏览器：火狐firefox（fireBug）、谷歌chrome、苹果safari、欧朋oprea…
+	
+Web(网页)的标准和组成(三层)
+	WEB标准是网页制作的标准，它不是一个标准，它是根据网页的不同组成部分生成的一系列标准。这些标准大部分由W3C起草发布，也有部分标准由ECMA起草发布。
+
+	1、结构：
+          HTML(Hyper Text Mark-up Language)超文本标记语言
+          XML(The Extensible Markup Language)可扩展标记语言
+          XHTML(The Extensible HyperText Markup Language)可扩展超文本标记语言
+    2、表现：
+          CSS(Cascading Style Sheets)：层叠样式表
+          
+    3、行为：
+          DOM(Document Object Model)文档对象模型
+          ECMAScript 脚本语言
+       
+HTML5 基本结构
+	<!doctype html> 命名文档类型
+	<html> 说明我们写的是标记语言
+	<head> 文件头部
+	<meta charset="utf-8"/> 编码格式
+	<title>html5</title> 文件标题（显示在状态栏上的内容）
+	</head>
+	<body>
+	文件主体(所有要写的内容)
+	</body>
+	</html>
+	
+HTML基本语法
+	1、<常规标记>
+     <标记  属性=“属性值”   属性=“属性值”></标记>
+	2、空标记
+	    <标记 属性=“属性值”  />
+	    说明：
+	    1）写在<>中的第一个单词叫做标记，标签，元素。
+	    2）标记和属性用空格隔开，属性和属性值用等号连接，   属性值必须放在“”号内。
+	    3）一个标记可以没有属性也可以有多个属性，属性和属 性之间不分先后顺序。
+	    4）空标记没有结束标签，用“/”代替。	
+	3、标签嵌套关系
+		父子级嵌套
+		兄弟级并列
+		
+插入图片
+	<img   src="目标文件路径及全称"     alt="图片替换文本"     title="图片标题" />
+    title的作用: 在你鼠标悬停在该图片上时显示一个小提示，鼠标离开就没有了，HTML的绝大多数标签都支持title属性，title属性就是专门做提示信息的.
+    alt的作用: alt属性是在你的图片因为某种原因不能加载时在页面显示的提示信息，它会直接输出在原本加载图片的地方。
+    
+相对路径
+	1)当当前文件与目标文件在同一目录下，直接书写目标文件文件名+扩展名；
+
+    2)当当前文件与目标文件所处的文件夹在同一目录下，写法如下：
+    
+    文件夹名/目标文件全称+扩展名；
+    
+    3)当当前文件所处的文件夹和目标文件所处的文件夹在同一目录下，写法如下：
+    
+    ../目标文件所处文件夹名/目标文件文件名+扩展名
+    
+绝对路径
+	绝对路径是指目录下的绝对位置，直接到达目标位置。
+	
+内部样式
+语法：
+
+    <style type="text/css">
+    
+    /*css语句*/
+    
+    </style>
+    
+    注：使用style标记创建样式时，最好将该标记写在<head></head>
+    
+外部样式
+    *方法一
+    <link rel="stylesheet" type="text/css" href="目标文件的路径及文件名全称" />  
+    说明：使用link元素导入外部样式表时，需将该元素写在文档头部，即<head>与</head>之间。
+	*方法二
+    <style type="text/css">   
+    @import url(目标文件的路径及文件名全称);
+    </style> 
+    注：@和import之间没有空格 url和小括号之间也没有空格；必须结尾以分号结束；
+    
+行内样式(内联)
+内联样式表（行间样式，行内样式，嵌入式样式）
+	语法：
+	<标签  style="属性：属性值;属性:属性值;"></标签>
+	注：内联样式表的优先级别最高	
+
+背景图
+	语法：
+	background-image:url(背景图片的路径及全称);
+
+	插入图片：属于网页内容，也就是结构。
+
+	背景图：属于网页的表现，背景图上可以显示文字、插入图片、表格等。
+
+	背景图显示原则：
+    
+    1）容器尺寸等于图片尺寸，背景图片正好显示在容器中;
+
+    2）容器尺寸大于图片尺寸，背景图片将默认平铺，直至铺满元素；
+    
+    3）容器尺寸小于图片尺寸，只显示容器/元素/范围以内的背景图。
+
+背景平铺
+	语法：
+
+    选择符{background-repeat:no-repeat/repeat/repeat-x/repeat-y }
+    
+    no-repeat:不平铺
+    
+    repeat：平铺（默认）
+    
+    repeat-x：横向平铺
+    
+    repeat-y ：纵向平铺
+
+背景位置
+	语法：选择符{background-position:left/center/right/数值     top/center/bottom/数值;}
+	
+	background-position:值1    值2;
+	
+	水平方向上的对齐方式（left/center/right）或值    
+	垂直方向上的对齐方式(top/center/bottom)或值
+	
+	两个值 ：第一个值表示水平位置的值，第二个值：表示垂直的位置。
+	
+	当两个值都是center的时候写一个值就可以代表的是水平位置和垂直位置都在中间。
+	
+	说明：向右方向，向下方向是负值     ps中向左或者上为负值
+
+网页中常用的图片格式
+	1)jpg:有损压缩格式，靠损失图片本身的质量来减小图片的体积，适用于颜色丰富的图像;(像素点组成的，像素点越多会越清晰 )
+	
+	2）gif：有损压缩格式，靠损失图片的色彩数量来减小图片的体积，支持透明，支持动画，适用于颜色数量较少的图像;
+	
+	3)png:有损压缩格式，损失图片的色彩数量来减小图片的体积，支持透明不支持动画，是fireworks的 源文件格式，适用于颜色数量较少的图像;
+
+	
+字号
+	font-size:14px/16px/18px;
+    1）属性值为数值时，必须给属性值加上单位，属性值为0除外。
+    2）单位还可以为pt，9pt=12px
+    3）为了减少系统间的字体显示差异，共同确定16px/ppi为标准字体大小默认值，即1em，默认情况下1em=16px,0.75em=12px;  
+文字颜色
+	语法：{color:颜色值;}
+	说明：
+	用十六进制表示颜色值：
+	0  1  2  3  4   5  6  7  8  9
+	0  1  2  3  4   5  6  7  8  9  A  B  C  D  E  F
+	颜色模式：光色模式   rgb(111,111,111)   范围（0~255）
+	  R       G      B
+	  FF      00     00
+	颜色值的缩写：(AABBCC->ABC或者AAAAAA->AAA)
+	当表示三原色的三组数字同时相同时，可以缩写为三位;
+	当用十六进制表示颜色值时，需要在颜色值前加“#” 
+文字大小
+	给文字设置font-size:12px之后，浏览器解析出来文字的高度并不是12px,要想让浏览器解析出来的高度为12px,给盒子设置高度跟行高12px即可。	
+字体
+	font-family:"字体1","字体2";
+	说明：
+	1）当字体为中文时，需要加上引号
+	2）当英文字体中有空格时需要引号 如"Times New Roman"
+	3）windows中文操作系统下，中文默认字体为宋体或新宋体，英文默认字体为Arial	
+空格大小(&nbsp)
+	demo1:
+		字体大小:16px;
+		空格大小：8px;
+				
+	demo2:
+		字体大小:14px;
+		空格大小:7px;
+	
+	空格的大小是当前字体大小的一半
+	代码换行被解析成空格
+水平对齐
+	语法：
+	{text-align:left/right/center/justify（两端对齐中文不起作用）};	
+文本加粗
+	font-weight:normal/bold/bolder/100-900
+	1）bold和bolder都表示加粗，但一般浏览器对他们区别不明显
+	2）在css规范中将字体分为9个等级，分别从100-900，其中100对应最轻的字体变形，而900对应最重的字体变形
+	100-500为常规字体
+	600-900为加粗字体
+文本倾斜
+	font-style:normal常规字体/italic/oblique倾斜;
+	italic和oblique都表示倾斜，不过oblique的幅度要大一点,但一般浏览器对它们的区分不是很明显。	
+首行缩进
+	语法：																																																																																																																																																																																																																																																																																																																											
+	{text-indent:value;}
+	说明：
+	1）text-indent可以取负值；
+	2）text-indent属性只对第一行起作用。
+	3）可继承   单位：px  em
+文本属性简写
+	文字属性简写  font:font-style   font-weight   font-size/line-height   font-family;
+    font符合样式是有顺序的，font-style、font-weight的顺序是可以互相调换
+	如果你没有设定font-weight , font-style , 他们会使用缺省值。  
+	简写时，font-size和line-height只能通过一个斜杠组成一个值，不能分开写   
+	复合样式写法一定要有字体大小，行高，字体 
+	文字属性简写：font:12px/1.5em  "宋体";
+		
+行高
+	语法：
+	行高{line-height:normal/数值;}
+	说明：
+	1）当单行文本的行高等于容器高时，可实现单行文本在容器中垂直方向居中对齐；
+	2)   当单行文本的行高小于容器高时，可实现单行文本在容器中垂直中齐以上任意位置的定位；
+	3)   当单行文本的行高大于容器高时，可实现单行文本在容器中垂直中齐以下任意位置的定位。（IE6及以下版本存在浏览器兼容问题）
+	行高测量：
+	    1）确认字体大小
+	    2）从一行文字的最顶端量到第二行文字的最顶端
+	    3）得出的值即为行高
+	    字体大小是可以继承的
+	    给父级或者祖先元素设置字体大小，那么子孙元素会继承
+	    
+超链接
+	语法：
+	
+	<a   href="目标文件路径及全称/连接地址">链接文本/图片</a>
+	
+	<a href="#"></a>空链接
+	
+	属性：target:页面打开方式，默认属性值_self。
+	
+	属性值：_blank 新窗口打开
+	
+	<a href="#" target="_blank">新窗口打开</a>
+	
+	文本修饰：
+	语法：
+	
+	text-decoration:none/underline/overline/line-through/blink.(高版本浏览器不支持blink属性)
+	
+	说明：
+	none:没有修饰
+	underline:添加下划线
+	overline:添加上划线
+	line-through:添加删除线
+	blink：闪烁
+	
+锚点连接
+	定义：是网页制作中超级链接的一种，又叫命名锚记。命名锚记像一个迅速定位器一样是一种页面内的超级链接，运用相当普遍。
+	
+	命名锚点链接的应用：
+	1)命名锚点的作用：在同一页面内的不同位置进行跳转。
+	
+	2)给元素定义命名锚记名
+	语法：<标记   id="命名锚记名">    </标记>
+	
+	3)命名锚记连接
+	语法：<a href="#命名锚记名称"></a>
+	
+字母单词间距
+	字母间距：
+		letter-spacing:数值
+	
+	单词间距：
+		word-spacing:数值
+	
+	强制不换行：
+		white-space:normal(正常)/nowrap(不换行)
+		
+padding(内填充)
+	填充：padding,在设定页面中一个元素内容到元素的边缘(边框) 之间的距离。 也称补白。
+	    
+	    用法：
+	    1）用来调整内容在容器中的位置关系
+	    
+	    2）用来调整子元素在父元素中的位置关系。
+	    
+	    注：padding属性需要添加在父元素上。
+	    
+	    3）padding值是额外加在元素原有大小之上的，如想保证元素大小不变，需从元素宽或高上减掉后添加的padding属性值。
+	
+	属性值的4种方式：
+	
+	  四个值：上   右   下   左 {padding:10px   20px   30px    40px;}
+	
+	  三个值：上    左右    下 {padding:10px   20px   30px ;}
+	
+	  二个值：上下    左右 {padding:10px   20px  ;}
+	
+	  一个值：四个方向 padding:2px;/*定义元素四周填充为2px*/
+	
+	padding-left:左边界  padding-right:右边界   padding-top:上边界    padding-bottom:下边界
+	
+margin(边距)
+	边界：margin,在元素外边的空白区域，被称为边距。
+	
+	margin-left:左边界  margin-right:右边界   margin-top:上边界margin-bottom:下边界
+	
+	属性值的4种方式：
+	四个值：上   右   下   左 {margin:10px   20px   30px    40px;}
+	
+	三个值：上    左右    下 {margin:10px   20px   30px ;}
+	
+	二个值：上下    左右 {margin:10px   20px  ;}
+	一个值：四个方向 margin:2px;
+	问题：
+	1.margin-top传递
+	当父级元素包裹子元素时，子元素有margin-top或者margin-bottom,那么第一个子元素的margin-top或者margin-bottom，会传递给父级元素
+	
+	2.margin叠压
+	当父级容器包裹多个子元素时，子元素的margin-top,margin-bottom会叠压
+	当上下margin值不一样时，叠压范围取最大值
+					
+	解决：
+	1.给父级容器加border
+	2.尽量不要使用同级方向的margin
+	可以单独给某一个元素设置单一方向的margin，用padding代替 
+	
+	*margin值的解析：左右边界累加，上下边界重合。
+	
+文本标签（h1-h6）
+     <h1>一级标题</h1>(header1~header6	)
+     <h2>二级标题</h2>...
+     <h6>六级标题</h6>
+     
+段落标签
+	段落(p)(paragraph)
+	<p>段落文本内容</p>
+	标识一个段落(段落与段落之间有段间距)
+	
+加粗标签
+	加粗
+	<b>加粗内容</b>
+	<strong>加粗内容</strong>
+
+倾斜标签
+	<em></em>(emphasized)
+	<i></i>(italic)
+	
+水平线
+	<hr /> 空标记(horizontal   rule)
+	
+上标文本
+	<sup></sup>
+	
+下标文本
+	<sub></sub>
+	
+删除线标签
+	<del></del>
+	
+大于号/小于号
+	&gt；大于     &lt;小于
+
+版权
+	&copy; （圈C）
+	
+无序列表组成：
+	<ul>(unordered   list)
+		<li></li>
+		<li></li>
+		<li></li>
+		．．．．．．
+	</ul>
+	
+	
+	定义列表符号样式：
+	1)list-style-type:disc(实心圆)/circle（空心圆）/square(实心方块 )none(去掉列表符号)；
+	
+	2)使用图片作为列表符号：list-style-image:url(所使用图片的路径及全称);
+	
+	3)定义列表符号位置：list-style-position:outside/inside;
+	
+	list-style:none;简写
+	
+有序列表组成：
+    <ol>(ordered   list)
+        <li></li>
+        <li></li>
+        <li></li>
+        ．．．．．．
+    </ol>
+    
+    type:规定列表中的列表项目的项目符号的类型
+    
+    语法：<ol type="a"></ol>
+    
+    1 数字顺序的有序列表（默认值）（1, 2, 3, 4）。
+    a 字母顺序的有序列表，小写（a, b, c, d）。
+    A 字母顺序的有序列表，大写（A,B,C,D)
+    i 罗马数字，小写（i, ii, iii, iv）。
+    I 罗马数字，大写（i, ii, iii, iv）。
+    
+    start 属性规定有序列表的开始点。
+    语法：<ol start="5"></ol>
+    
+自定义列表
+	<dl>
+		<dt>名词</dt>
+	    <dd>解释</dd>
+	</dl>
+	
+元素选择器
+	语法：元素名称{属性：属性值；}
+	
+	说明：
+	a)元素选择符就是以文档语言对象类型作为选择符，即使用结构中元素名称作为选择符。例如body、div、p,img,em,strong,span......等。
+	
+	b)所有的页面元素都可以作为选择符;
+	
+	用法：
+	1)如果想改变某个元素得默认样式时，可以使用类型选择符；
+	2) 当统一文档某个元素的显示效果时，可以使用类型选择符；
+
+id选择器
+	语法：#id名{属性：属性值;}
+	说明：
+	1）当我们使用id选择符时，应该为每个元素定义一个id属性，
+	如：<div id="top"></div>
+	
+	2）id选择符的语法格式是“#”加上自定义的id名
+	如：#box{width:300px; height:300px;}
+	
+	3)  起名时要取英文名，不能用关键字：(所有的标记和属性都是关键字)
+	如：head标记
+	
+	4）一个id名称只能对应文档中一个具体的元素对象，因为id只能定义页面中某一个唯一的元素对象。
+
+	5)   最大的用处：创建网页的外围结构
+	
+class选择器	
+	语法：.class名{属性：属性值;}
+	
+	说明：
+	
+	1）当我们使用类选择符时，应先为每个元素定义一个类名称，
+	
+	     类选择符的语法格式是："如：<div class="top"></div>"
+	
+	用法：class选择符更适合定义一类样式；
+	
+群组选择器
+	语法：选择符1，选择符2，选择符3......{属性：属性值;}
+
+	说明：当有多个选择符应用相同的样式时，可以将选择符用“，”分隔的方式，合并为一组。
+	
+包含选择器
+	语法：选择符1    选择符2{属性：属性值;}
+	
+	说明：选择符1和选择符2用空格隔开，含义就是选择符1中包含的所有选择符2;
+	
+	选择符{margin:0 auto;}元素居中。
+	
+子选择器
+
+	语法：选择符1>选择符2{属性：属性值;}
+	
+	作用：只对选择符1下的子元素选择符2起作用;
+	
+伪类选择器
+	a:link{
+		color:green;
+		}
+	a:visited{
+		color:red;
+		}
+
+	a:hover{
+		color:pink;
+		}
+	a:active{
+		color:purple;
+		}
+		
+块元素
+	1）块状元素在网页中就是以块的形式显示，所谓块状就是元素显示为矩形区域，常用的块状元素包块div,dl,dt,dd,ol,ul,fieldset,(h1-h6),p,form,hr,colgroup,col,table,tr,td,等；
+	
+	 2）默认情况下，块状元素都会占据一行，通俗地说，两个相邻块状元素不会出现并列显示的现象；默认情况下，块状元素会按顺序自上而下排列。
+	
+	3）块状元素都可以定义自己的宽度和高度。
+	 
+	 4）块状元素一般<strong></strong>都作为其他元素的容器，它可以容纳其它内联元素和其它块状元素。我们可以把这种容器比喻为一个盒子。
+	
+	5）支持所有的css属性
+	
+行内元素(内联)	
+1) 常见的内联元素如：a,span,i,em,strong,b,del等
+
+2) 内联元素的表现形式是始终以行内逐个进行显示；
+
+3) 内联元素没有自己的形状，不能定义它的宽和高,它显示的宽度、高度只能根据所包含内容的高度和宽度来确定，它的最小内容单元也会呈现矩形形状；
+
+4)内联元素也会遵循盒模型基本规则，如可以定义padding,border,margin,background等属性，但个别属性不能正确显示;
+
+元素转换display
+	说明：各属性值的作用
+	
+	1)block块状显示：类似在元素后面添加换行符，也就是说其他元素不能在其后面并列显示。
+	
+	2)inline内联显示：在元素后面删除换行符，多个元素可以在一行内并列显示。
+	
+	3)当元素设置了float属性后，就相当于给该元素加了display:block;属性；
+	
+	4)Inline-block行内块元素显示：元素的内容以块状显示，行内的其他元素显示在同一行。（只有这一个元素类型支持vertical-align属性）img,input。
+	
+	5)none 此元素不会被显示。
+	
+	6)list-item:将元素转换成列表。li的默认类型
+	
+	7）
+	     a)大部分块元素display属性值默认为block，其中li默认值为list-item。
+	
+	    b）部分内联元素的display属性值默认为inline,其中img,input，默认为inline-block。
+	    
+	inline-block 行内块元素，既有行内元素特性，又有块元素特性。
+
+
+文字图片默认显示样式(vertical-align):
+	top（顶端）  元素的顶端与行中最高元素的顶端对齐
+
+	middle（中间）  元素放置在父元素的中部。
+
+	bottom（底部）    元素的顶端与行中最低的元素的顶端对齐
+
+cursor(光标属性)	
+	属性：cursor
+	
+	属性值：
+	pointer(手形)	
+	move(移动)		
+	text(文本)    
+	wait(等待状态)
+	help(帮助)        
+	crosshair(十字架)
+	
+	se-resize(向下及向右)                     sw-resize(向下及向左)
+	      
+	s-resize（向下移动）                      w-resize（向左移动）
+	
+	e-resize(左右方向)             
+	ne-resize（向右及向上移动）
+	    
+	nw-resize(向上及向左移动)	    
+	n-resize(向上移动)
+	
+浮动
+	语法：float:none/left/right;
+	
+	浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+	
+	浮动框是脱离了普通的文档流
+	
+什么是高度塌陷
+	浮动元素父元素高度自适应（父元素不写高度时，子元素写了浮动后，父元素会发生高度塌陷）
+	
+clear清除浮动
+     clear:元素的某个方向上不能有浮动元素 ,需要给块元素添加
+
+     属性值：left  right  both		
+     
+     在浮动元素下方添加空div,并给该元素添加声明:{clear:both;}
+     
+溢出
+	overflow:visible/hidden(隐藏)/scroll/auto(自动)/inherit;
+	
+	visible:默认值，内容不会被修剪，会成现在元素框之外；
+	
+	hidden：内容会被修剪，并且其余内容是不可见的；
+	
+	scroll：内容会被修剪，但是浏览器会显示滚动条，以便查看其余的内容;
+	
+	auto：如果内容被修剪，则浏览器会显示滚动条，以便查看其他的内容;
+	
+	inherit：规定应该从父元素继承overflow属性的值。
+	
+伪对象选择符(伪元素选择符)：
+	1）、:after:与content属性一起使用，定义在对象后的内容。
+	
+	如：div:after{content:url(logo.jpg);}
+	      div:after{content:"文本内容";}
+	
+	2）、:before:与content属性一起使用，定义在对象前的内容。
+	
+	如：div:before{content:"在其前放内容";}
+	
+	3）、：first-letter:定义对象内第一个字符的样式。
+	
+	说明：(该伪元素只能用于块级元素。)
+	
+	4）、：first-line:定义对象内第一行的样式。
+	
+	说明：*(该伪元素只能用于块级元素。)
+	
+	*ie6以下版本浏览器不支持伪对象选择符。
+
+隐藏	
+	visibility:hidden/visible;隐藏/可见
+	
+	visibility:hidden;和display:none;的区别：
+	
+	visibility:hidden;属性会使对象不可见，但该对象在网页所占的空间没有改变，等于留出了一块空白区域，而 display:none属性会使这个对象彻底消失。
+	
+继承属性:
+    width,font-size,font-family,color,font-weight,font-style,line-height,text-indent,text-align
+    	
+相对定位：relative
+	检索对象的定位方式；
+	语法：position：static /relative/absolute/fixed
+	
+	取值：
+	1、static：默认值，无特殊定位，对象遵循HTML原则；
+	
+	2、relative ：相对定位，对象不可层叠，将依据right，top，left，bottom（相对定位）
+	
+	等属性在正常文档流中偏移位置(相对自己原来的位置偏移)。
+	
+absolute：绝对定位
+	将对象从文档流中拖离出来，使用left/right/top/bottom等属性，如果没有父亲，则相对于document进行定位，而其层叠通过z-index属性定义;
+	
+z-index : auto | number
+
+	检索或设置对象的层叠顺序。
+	auto：默认值。遵从其父对象
+	number:无单位的整数值。可为负数
+	
+	说明：
+	1）较大 number 值的对象会覆盖在较小 number 值的对象之上。如两个绝对定位对象的此属性具有同样的 number 值，那么将依据它们在HTML文档中声明的顺序层叠。
+	
+	    此属性仅仅作用于 position 属性值为 relative 或 absolute,fixed 的对象。
+	    
+fixed：固定定位
+	对象定位遵从绝对定位方式（absolute）；但是要遵守一些规范（IE6浏览器不支持此定位）根据浏览器的窗口来定义自己的位置。
+	
+透明：opacity:0.5;
+	filter:alpha(opacity=50);
+	
+表格相关属性
+	1）width="表格的宽度"
+	
+	2）height="表格的高度"
+	
+	3）border="表格的边框"
+	
+	4)bordercolor="表格边框的颜色"
+	
+	5）bgcolor="表格的背景色"
+	
+	6）cellspacing="单元格与单元格之间的间距"
+	
+	7）cellpadding="单元格与内容之间的空隙"
+	
+	8）水平对齐方式：align="left/center/right";
+	
+	rowspan  属性规定单元格可横跨的行数。
+	<td rowspan="2"></td>
+	
+合并相邻单元格边框
+	border-collapse:separate(边框分开)/collapse(边框合并)；
+无内容单元格显示、隐藏
+	empty-cells:show/hide;
+表格布局算法
+	table-layout:auto/fixed(固定宽度，不会随内容多少改变单元格宽度）
+	
+	自动表格布局：列的宽度是由列单元格中没有折行的最宽的内容设定的。
+	
+	缺点：较慢（因为它需要在确定最终的布局前访问表格中的所有内容）。
+	优点：灵活
+	
+	固定表格布局
+	
+	优点：加快运行的速度,允许浏览器更快的对表格进行布局。
+	缺点:不太灵活
+
+form   表单
+	<input type="…… " name="" value="" /> 
+	text         文本框
+	password     密码
+	radio        单选 （要想实现单选，须name属性值相同）
+	checkbox     复选
+	submit       提交
+	reset        重置
+	button       按钮
+	image        图片
+	file         上传
+	hidden       隐藏
+	
+label  标签	
+	点击文字，可以选中input表单控件：
+	label  标签为 input 元素定义标注
+		<label for="a">
+			<input type="checkbox" name="" id="a"/>
+		</label>
+选中禁选	
+	checked  在页面加载时默认选定的 input 元素。
+		<input type="checkbox" name=""  checked/>
+		 或者checked=”checked”
+	
+	disabled  属性规定应该禁用 input 元素。
+		<input type="checkbox" name=""  disabled/>
+		或者disabled=”disabled”
+
+select/option 下拉选框
+	对高度的支持不兼容；
+	
+textarea   文本域(多行文本框)      
+	rows:规定文本区内的可见行数。
+	cols:规定文本区内的可见宽度(以平均字符数计);
+	各个浏览器下的默认滚动条显示不兼容
+	
+css3新增 resize 调整尺寸属性；
+	resize:
+		  none(默认值，用户无法调整元素尺寸)
+		  both	            用户可调整元素的高度和宽度。
+		  horizontal	用户可调整元素的宽度。
+		  vertical	           用户可调整元素的高度。
+     注释：如果希望此属性生效，需要设置元素的 overflow 属性，值可以是 auto、hidden 或 scroll。
+	注释：Firefox 4+、Chrome 以及 Safari 支持 resize。
+	
+***兼容问题***	
+去掉下拉框三角：
+    select{
+		appearance:none;
+		-webkit-appearance:none;
+		-moz-appearance:none;
+	}
+	
+图片间隙
+	A)div中的图片间隙(该bug出现在IE6及更低版本中)
+	
+	描述：在div中插入图片时，图片会将div下方撑大三像素。
+	
+	hack1:将</div>与<img>写在一行上；
+	
+	hack2:将<img>转为块状元素，给<img>添加声明：display:block;
+	
+	B)dt,li中图片间隙（IE6）
+	
+	hack:将<img>转为块状元素，给<img>添加声明：display:block;
+	
+默认高度（IE6）	
+	描述：在IE6及以下版本中，部分块元素拥有默认高度（低于16px高度）
+	
+	hack1:给元素添加声明：font-size:0;
+	
+	hack2：给元素添加声明：overflow:hidden;
+
+表单元素行高对齐方式	
+	表单元素行高不一致(IE,MOZ,C,O,S)
+	
+	描述：表单元素行高对齐方式不一致
+	
+	hack:给表单元素添加声明：float:left;
+	
+按钮元素默认大小
+	描述：各浏览器中按钮元素大小不一致
+	
+	hack1： 统一大小/（用a标记模拟）
+	
+	hack2:input外边套一个标签，在这个标签里写按钮的样式，把input的边框去掉。
+	
+	hack3:如果这个按钮是一个图片，直接把图片作为按钮的背景图即可。
+	
+百分比bug
+	描述：在IE6及以下版本中在解析百分比时，会按四舍五入方式计算从而导致50%加50%大于100%的情况。
+	
+	hack:给右面的浮动元素添加声明：clear:right;     意思：清除右浮动。     
+	
+	clear:left:清除左浮动
+	clear:both:清除两边的浮动
+	
+列表阶梯BUG（IE6及更低版本的浏览器中）
+	bug1:在给的子元素中使用了float:left;父元素中没有设置浮动属性，会出现垂直效果;
+	hack:给父元素设置浮动便能解决此问题
+	
+	bug2:当给LI里的A转成块元素，并设置了固定高度时，且写了浮动后在IE6及更低的版本浏览器里会出现LI阶梯状效果。
+	hack:给LI也同设置左浮动便可解决。
+	
+margin-top传递
+
+	bug:子元素没设置任何浮动，设置了margin-top属性后，会错误的把margin-top的属性值添加给父元素.
+	
+	hack1:给父元素添加overflow:hidden；声明。
+	*:如果子元素设置了浮动属性也不会出现这个问题。
+	
+dotted	
+	在ie6下1px的dotted有问题，可以用图片代替  border-image
+	
+H5标签不支持ie9以下版本浏览器
+H5标签：
+    <header>定义页面或区段的头部；
+	<footer>定义页面或区段的尾部；
+	<nav>定义页面或区段的导航区域；
+	<section>页面的逻辑区域或内容组合；
+	<article>定义正文或一篇完整的内容；
+	<aside>定义补充或相关内容；
+
+	hack1:引用html5shiv.js帮助解决
+
+并列盒子	
+	两个结构并列的盒子，第一个盒子浮动后，第二个盒子加margin-left值（盒子宽度），第一个盒子在IE6下会有间隙问题
+	hack1：不建议这么写，用浮动解决
+	
+IE6下子元素超出父级宽高，会把父级的宽高撑开
+	hack1：子元素高度不要超过父级高度，或者给父级元素overflow：hidden;
+	
+IE6不识别inline-block属性值，采用IE私有的zoom来解决问题。
+	注：
+	*属性过滤器
+	    当在一个属性前面增加了*后，该属性只能被IE7及以下版本浏览器识别，其它浏览器忽略该属性的作用。
+	语法：选择符{*属性：属性值；}
+	hack1：*display: inline;*zoom:1;
+	zoom：1；属性是IE浏览器的专有属性，它可以设置或检索对象的缩比例。
+	
+Li中的元素都浮动，在IE6，IE7下方会产生4px间隙
+	hack1：针对ie6、7使用hack给li添加vertical-align
+	hack2：给li加float
+	
+两个浮动元素中间有注释或者内嵌元素并且和父级宽度相差不超过3像素，文字就被复制.
+	Hack1：去掉注释，或者去掉宽度
+
+
